@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1510" viewBox="0 0 1400 1510" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2200" viewBox="0 0 1400 2200" role="img" aria-labelledby="title desc">
 <title id="title">esp32-rkstlohchab current module wiring</title>
 <desc id="desc">GPIO connections for the ESP32-S3 N16R8 bench build, with shared nets repeated by module. Power constraints are listed separately.</desc>
 <style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}.pin{font-size:16px;font-family:monospace}.muted{fill:#536978}</style>
-<rect width="1400" height="1510" fill="#f5f8fa"/>
+<rect width="1400" height="2200" fill="#f5f8fa"/>
 <text x="48" y="55" class="title" text-anchor="start">esp32-rkstlohchab</text>
 <text x="48" y="85" class="body" text-anchor="start">Module connection schematic · ESP32-S3 N16R8 · current configuration · 2026-10-08</text>
-<text x="48" y="112" class="small" text-anchor="start">GPIO labels are logical signals, not DevKit header positions. Repeated GPIOs are the same shared net.</text>
+<text x="48" y="112" class="small" text-anchor="start">Shared signals route via breadboard rows S1–S6 below; all other signal connections use dedicated direct jumpers.</text>
 <rect x="505" y="145" width="390" height="1035" rx="12" fill="#e7f0f5" stroke="#8ba4b4"/>
 <text x="700" y="180" class="heading" text-anchor="middle">ESP32-S3 N16R8</text>
 <text x="700" y="205" class="small" text-anchor="middle">16 MB flash · 8 MB OPI PSRAM</text>
@@ -14,17 +14,17 @@
 <text x="56" y="258" class="small" text-anchor="start">TPM408-2.8 display</text>
 <text x="56" y="288" class="pin" text-anchor="start">SDI / MOSI</text>
 <path d="M350 283 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="288" class="pin" text-anchor="start">GPIO15</text>
+<text x="521" y="288" class="pin" text-anchor="start">GPIO15 · S4</text>
 <circle cx="350" cy="283" r="3" fill="#087e8b"/>
 <circle cx="505" cy="283" r="3" fill="#087e8b"/>
 <text x="56" y="313" class="pin" text-anchor="start">SCK</text>
 <path d="M350 308 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="313" class="pin" text-anchor="start">GPIO47</text>
+<text x="521" y="313" class="pin" text-anchor="start">GPIO47 · S5</text>
 <circle cx="350" cy="308" r="3" fill="#087e8b"/>
 <circle cx="505" cy="308" r="3" fill="#087e8b"/>
 <text x="56" y="338" class="pin" text-anchor="start">SDO / MISO</text>
 <path d="M350 333 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="338" class="pin" text-anchor="start">GPIO48</text>
+<text x="521" y="338" class="pin" text-anchor="start">GPIO48 · S6</text>
 <circle cx="350" cy="333" r="3" fill="#087e8b"/>
 <circle cx="505" cy="333" r="3" fill="#087e8b"/>
 <text x="56" y="363" class="pin" text-anchor="start">CS</text>
@@ -47,17 +47,17 @@
 <text x="56" y="508" class="small" text-anchor="start">Touch shares display SPI</text>
 <text x="56" y="538" class="pin" text-anchor="start">T_DIN</text>
 <path d="M350 533 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="538" class="pin" text-anchor="start">GPIO15</text>
+<text x="521" y="538" class="pin" text-anchor="start">GPIO15 · S4</text>
 <circle cx="350" cy="533" r="3" fill="#087e8b"/>
 <circle cx="505" cy="533" r="3" fill="#087e8b"/>
 <text x="56" y="563" class="pin" text-anchor="start">T_CLK</text>
 <path d="M350 558 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="563" class="pin" text-anchor="start">GPIO47</text>
+<text x="521" y="563" class="pin" text-anchor="start">GPIO47 · S5</text>
 <circle cx="350" cy="558" r="3" fill="#087e8b"/>
 <circle cx="505" cy="558" r="3" fill="#087e8b"/>
 <text x="56" y="588" class="pin" text-anchor="start">T_DO</text>
 <path d="M350 583 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="588" class="pin" text-anchor="start">GPIO48</text>
+<text x="521" y="588" class="pin" text-anchor="start">GPIO48 · S6</text>
 <circle cx="350" cy="583" r="3" fill="#087e8b"/>
 <circle cx="505" cy="583" r="3" fill="#087e8b"/>
 <text x="56" y="613" class="pin" text-anchor="start">T_CS</text>
@@ -126,17 +126,17 @@
 <circle cx="1050" cy="283" r="3" fill="#287d48"/>
 <text x="1066" y="313" class="pin" text-anchor="start">MOSI / DI</text>
 <path d="M895 308 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="313" class="pin" text-anchor="end">GPIO11</text>
+<text x="878" y="313" class="pin" text-anchor="end">GPIO11 · S1</text>
 <circle cx="895" cy="308" r="3" fill="#287d48"/>
 <circle cx="1050" cy="308" r="3" fill="#287d48"/>
 <text x="1066" y="338" class="pin" text-anchor="start">SCK / CLK</text>
 <path d="M895 333 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="338" class="pin" text-anchor="end">GPIO12</text>
+<text x="878" y="338" class="pin" text-anchor="end">GPIO12 · S2</text>
 <circle cx="895" cy="333" r="3" fill="#287d48"/>
 <circle cx="1050" cy="333" r="3" fill="#287d48"/>
 <text x="1066" y="363" class="pin" text-anchor="start">MISO / DO</text>
 <path d="M895 358 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="363" class="pin" text-anchor="end">GPIO13</text>
+<text x="878" y="363" class="pin" text-anchor="end">GPIO13 · S3</text>
 <circle cx="895" cy="358" r="3" fill="#287d48"/>
 <circle cx="1050" cy="358" r="3" fill="#287d48"/>
 <rect x="1050" y="429" width="310" height="203" rx="12" fill="#ffffff" stroke="#cfdae0"/>
@@ -149,17 +149,17 @@
 <circle cx="1050" cy="503" r="3" fill="#287d48"/>
 <text x="1066" y="533" class="pin" text-anchor="start">MOSI</text>
 <path d="M895 528 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="533" class="pin" text-anchor="end">GPIO11</text>
+<text x="878" y="533" class="pin" text-anchor="end">GPIO11 · S1</text>
 <circle cx="895" cy="528" r="3" fill="#287d48"/>
 <circle cx="1050" cy="528" r="3" fill="#287d48"/>
 <text x="1066" y="558" class="pin" text-anchor="start">SCK</text>
 <path d="M895 553 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="558" class="pin" text-anchor="end">GPIO12</text>
+<text x="878" y="558" class="pin" text-anchor="end">GPIO12 · S2</text>
 <circle cx="895" cy="553" r="3" fill="#287d48"/>
 <circle cx="1050" cy="553" r="3" fill="#287d48"/>
 <text x="1066" y="583" class="pin" text-anchor="start">MISO</text>
 <path d="M895 578 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="583" class="pin" text-anchor="end">GPIO13</text>
+<text x="878" y="583" class="pin" text-anchor="end">GPIO13 · S3</text>
 <circle cx="895" cy="578" r="3" fill="#287d48"/>
 <circle cx="1050" cy="578" r="3" fill="#287d48"/>
 <text x="1066" y="608" class="pin" text-anchor="start">GDO0</text>
@@ -177,12 +177,12 @@
 <circle cx="1050" cy="733" r="3" fill="#bc5c22"/>
 <text x="1066" y="763" class="pin" text-anchor="start">MOSI</text>
 <path d="M895 758 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="763" class="pin" text-anchor="end">GPIO11</text>
+<text x="878" y="763" class="pin" text-anchor="end">GPIO11 · S1</text>
 <circle cx="895" cy="758" r="3" fill="#bc5c22"/>
 <circle cx="1050" cy="758" r="3" fill="#bc5c22"/>
 <text x="1066" y="788" class="pin" text-anchor="start">SCK</text>
 <path d="M895 783 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="788" class="pin" text-anchor="end">GPIO12</text>
+<text x="878" y="788" class="pin" text-anchor="end">GPIO12 · S2</text>
 <circle cx="895" cy="783" r="3" fill="#bc5c22"/>
 <circle cx="1050" cy="783" r="3" fill="#bc5c22"/>
 <text x="1066" y="813" class="pin" text-anchor="start">MISO</text>
@@ -217,12 +217,86 @@
 <text x="700" y="1100" class="small" text-anchor="middle">Reserved: USB GPIO19/20</text>
 <text x="700" y="1125" class="small" text-anchor="middle">Flash 26–32 · PSRAM 33–37</text>
 <text x="700" y="1150" class="small" text-anchor="middle">RGB LED disabled on GPIO48</text>
-<rect x="40" y="1250" width="1320" height="215" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="60" y="1282" class="heading" text-anchor="start">POWER AND UNCONNECTED SIGNALS</text>
-<text x="60" y="1310" class="small" text-anchor="start">USB powers the tested build. All module grounds connect to common GND through the breadboard rails.</text>
-<text x="60" y="1338" class="small" text-anchor="start">3V3: joystick, NRF24, CC1101, TFT backlight; PN532 supply follows the documented 3V3 plan. Add 10–47 µF near NRF24.</text>
-<text x="60" y="1366" class="small" text-anchor="start">TFT VCC / SD / GPS / IR supply: confirm the exact breakout rating; MCU signal levels must be 3.3 V compatible.</text>
-<text x="60" y="1394" class="small" text-anchor="start">Leave GPS RX, NRF24 IRQ, and CC1101 GDO2 open. Touch IRQ46 is wired but polled. GPIO45/46 are strapping pins.</text>
-<text x="60" y="1422" class="small" text-anchor="start">Battery / TP4056 / switch are mechanical provisions only; no verified regulated battery power schematic is included.</text>
-<text x="60" y="1450" class="small" text-anchor="start">Sources: ESP32-DIV/BoardConfig.h · tft_espi-patch/User_Setup.h · hardware/pin-map.csv. See hardware/README.md.</text>
+<rect x="40" y="1220" width="1320" height="680" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="60" y="1260" class="heading" text-anchor="start">BREADBOARD · 400-point power distribution and shared signal splits</text>
+<text x="60" y="1288" class="small" text-anchor="start">S1–S6 are suggested isolated row labels, not fixed printed row numbers. One ESP32 jumper feeds each row.</text>
+<text x="60" y="1314" class="small" text-anchor="start">Shared GPIO labels in the module diagram above refer to these same six rows.</text>
+<rect x="350" y="1340" width="340" height="470" rx="12" fill="#f0f3ee" stroke="#afbab2"/>
+<text x="520" y="1370" class="small" text-anchor="middle">BREADBOARD SIGNAL ROWS</text>
+<text x="60" y="1416" class="pin" text-anchor="start">ESP32 GPIO11</text>
+<path d="M220 1410 H395" stroke="#287d48" stroke-width="2"/>
+<text x="370" y="1396" class="small" text-anchor="start">S1</text>
+<path d="M395 1410 H635" stroke="#287d48" stroke-width="3"/>
+<circle cx="395" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="455" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="515" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="575" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="635" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M635 1410 H720" stroke="#287d48" stroke-width="2"/>
+<text x="740" y="1416" class="small" text-anchor="start">SD MOSI / DI + CC1101 MOSI + PN532 MOSI</text>
+<text x="60" y="1482" class="pin" text-anchor="start">ESP32 GPIO12</text>
+<path d="M220 1476 H395" stroke="#287d48" stroke-width="2"/>
+<text x="370" y="1462" class="small" text-anchor="start">S2</text>
+<path d="M395 1476 H635" stroke="#287d48" stroke-width="3"/>
+<circle cx="395" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="455" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="515" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="575" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="635" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M635 1476 H720" stroke="#287d48" stroke-width="2"/>
+<text x="740" y="1482" class="small" text-anchor="start">SD SCK / CLK + CC1101 SCK + PN532 SCK</text>
+<text x="60" y="1548" class="pin" text-anchor="start">ESP32 GPIO13</text>
+<path d="M220 1542 H395" stroke="#287d48" stroke-width="2"/>
+<text x="370" y="1528" class="small" text-anchor="start">S3</text>
+<path d="M395 1542 H635" stroke="#287d48" stroke-width="3"/>
+<circle cx="395" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="455" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="515" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="575" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="635" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M635 1542 H720" stroke="#287d48" stroke-width="2"/>
+<text x="740" y="1548" class="small" text-anchor="start">SD MISO / DO + CC1101 MISO</text>
+<text x="60" y="1614" class="pin" text-anchor="start">ESP32 GPIO15</text>
+<path d="M220 1608 H395" stroke="#087e8b" stroke-width="2"/>
+<text x="370" y="1594" class="small" text-anchor="start">S4</text>
+<path d="M395 1608 H635" stroke="#087e8b" stroke-width="3"/>
+<circle cx="395" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="455" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="515" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="575" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="635" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M635 1608 H720" stroke="#087e8b" stroke-width="2"/>
+<text x="740" y="1614" class="small" text-anchor="start">TFT SDI / MOSI + Touch T_DIN</text>
+<text x="60" y="1680" class="pin" text-anchor="start">ESP32 GPIO47</text>
+<path d="M220 1674 H395" stroke="#087e8b" stroke-width="2"/>
+<text x="370" y="1660" class="small" text-anchor="start">S5</text>
+<path d="M395 1674 H635" stroke="#087e8b" stroke-width="3"/>
+<circle cx="395" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="455" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="515" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="575" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="635" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M635 1674 H720" stroke="#087e8b" stroke-width="2"/>
+<text x="740" y="1680" class="small" text-anchor="start">TFT SCK + Touch T_CLK</text>
+<text x="60" y="1746" class="pin" text-anchor="start">ESP32 GPIO48</text>
+<path d="M220 1740 H395" stroke="#087e8b" stroke-width="2"/>
+<text x="370" y="1726" class="small" text-anchor="start">S6</text>
+<path d="M395 1740 H635" stroke="#087e8b" stroke-width="3"/>
+<circle cx="395" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="455" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="515" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="575" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="635" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M635 1740 H720" stroke="#087e8b" stroke-width="2"/>
+<text x="740" y="1746" class="small" text-anchor="start">TFT SDO / MISO + Touch T_DO</text>
+<text x="60" y="1838" class="body" text-anchor="start">POWER RAILS: ESP32 GND → common GND rail; ESP32 3V3 → separate labelled 3V3 rail.</text>
+<text x="60" y="1866" class="small" text-anchor="start">Keep every S-row isolated. Never bridge 3V3 and 5V. Check split power-rail continuity. Dedicated signals can bypass the breadboard.</text>
+<rect x="40" y="1940" width="1320" height="215" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="60" y="1972" class="heading" text-anchor="start">POWER AND UNCONNECTED SIGNALS</text>
+<text x="60" y="2000" class="small" text-anchor="start">USB powers the tested build. All module grounds connect to common GND through the breadboard rails.</text>
+<text x="60" y="2028" class="small" text-anchor="start">3V3: joystick, NRF24, CC1101, TFT backlight; PN532 supply follows the documented 3V3 plan. Add 10–47 µF near NRF24.</text>
+<text x="60" y="2056" class="small" text-anchor="start">TFT VCC / SD / GPS / IR supply: confirm the exact breakout rating; MCU signal levels must be 3.3 V compatible.</text>
+<text x="60" y="2084" class="small" text-anchor="start">Leave GPS RX, NRF24 IRQ, and CC1101 GDO2 open. Touch IRQ46 is wired but polled. GPIO45/46 are strapping pins.</text>
+<text x="60" y="2112" class="small" text-anchor="start">Battery / TP4056 / switch are mechanical provisions only; no verified regulated battery power schematic is included.</text>
+<text x="60" y="2140" class="small" text-anchor="start">Sources: ESP32-DIV/BoardConfig.h · tft_espi-patch/User_Setup.h · hardware/pin-map.csv. See hardware/README.md.</text>
 </svg>

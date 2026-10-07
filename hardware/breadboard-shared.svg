@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-label="Six isolated breadboard signal rows for shared GPIOs">
 <style>text{font-family:Arial,sans-serif;fill:#213444;font-size:16px}.h{font-size:26px;font-weight:700}.s{font-size:14px;fill:#536978}</style>
 <rect width="1200" height="650" fill="#f5f8fa"/>
-<text x="35" y="48" class="h">Shared pins → isolated breadboard rows</text>
+<text x="35" y="48" class="h">BREADBOARD · shared signal rows</text>
 <text x="35" y="78" class="s">One ESP32 wire + module taps on each row. S1–S6 are suggested labels. These six rows must remain isolated.</text>
 <text x="35" y="131">ESP32 GPIO11</text>
 <path d="M175 125 H270" stroke="#087e8b" stroke-width="3"/>
