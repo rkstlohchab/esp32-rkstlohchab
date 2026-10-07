@@ -16,6 +16,7 @@ This repository contains the current firmware, the wiring used by this build, an
 | Download the compiled firmware | [Firmware files and checksums](firmware/README.md) |
 | Print the case | [Enclosure guide](enclosure/README.md) · [download ZIP](enclosure/enclosure-v2.zip) |
 | Explore the 3D assembly | [Interactive viewer](enclosure/enclosure.html) · [layout drawing](enclosure/layout-v2.png) |
+| Avoid the assembly mistakes we encountered | [Mistakes and fixes, including PN532 mode switches](docs/ASSEMBLY-MISTAKES.md) |
 | Check what has actually been tested | [Status and limitations](docs/STATUS.md) |
 | Find the source | [Arduino sketch](ESP32-DIV/ESP32-DIV.ino) · [board pin configuration](ESP32-DIV/BoardConfig.h) |
 | Apply the required display patches | [TFT_eSPI patch](tft_espi-patch/README.md) |

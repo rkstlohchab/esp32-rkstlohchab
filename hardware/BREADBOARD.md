@@ -1,6 +1,6 @@
 # Breadboard sharing and direct ESP32 jumpers
 
-Use this alongside the [complete pin diagram](wiring.svg) and [hardware power notes](README.md#power-connections). The firmware determines which wires share a net; the breadboard rows below are a suggested physical layout, not a record of exact numbered rows in the assembled prototype.
+Use this alongside the [complete pin diagram with actual ESP32 → breadboard → component paths](wiring.svg) and [hardware power notes](README.md#power-connections). The firmware determines which wires share a net; the breadboard rows below are a suggested physical layout, not a record of exact numbered rows in the assembled prototype.
 
 ## Shared signal pins: split these on the breadboard
 

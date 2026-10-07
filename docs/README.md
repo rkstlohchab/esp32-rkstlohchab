@@ -12,3 +12,5 @@
 To open the interactive 3D assembly, run `python3 -m http.server 8000` from the repository root and visit `http://localhost:8000/enclosure/enclosure.html`. The viewer currently loads Three.js and fonts from CDNs, so internet access is needed. GitHub's file preview displays the HTML source rather than running the viewer.
 
 `PORT.md`, `MERGE.md`, and `MARAUDER-UI-FIX.md` at the repository root are retained as historical notes, not the current wiring reference.
+
+See [assembly mistakes and fixes](../docs/ASSEMBLY-MISTAKES.md), especially the PN532 mode switches and GPS common ground.

@@ -75,3 +75,5 @@ python3 hardware/generate_wiring.py
 ```
 
 The generator reads `pin-map.csv`, checks every GPIO against the board configuration, and writes `wiring.svg`. Update the firmware configuration and CSV together when wiring changes.
+
+See [assembly mistakes and fixes](../docs/ASSEMBLY-MISTAKES.md), especially the PN532 mode switches and GPS common ground.

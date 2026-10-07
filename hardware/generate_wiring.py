@@ -34,95 +34,117 @@ def main():
                          ('TOUCH_CS','XPT2046_CS')]:
         assert int(display_macros[patch]) == resolve(board), patch
 
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2200" viewBox="0 0 1400 2200" role="img" aria-labelledby="title desc">',
-           '<title id="title">esp32-rkstlohchab current module wiring</title>',
-           '<desc id="desc">GPIO connections for the ESP32-S3 N16R8 bench build, with shared nets repeated by module. Power constraints are listed separately.</desc>',
-           '<style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}.pin{font-size:16px;font-family:monospace}.muted{fill:#536978}</style>',
-           '<rect width="1400" height="2200" fill="#f5f8fa"/>']
-    def text(x,y,s,cls='body',anchor='start'):
-        out.append(f'<text x="{x}" y="{y}" class="{cls}" text-anchor="{anchor}">{html.escape(s)}</text>')
-    def rect(x,y,w,h,fill,stroke='#cfdae0'):
-        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="{fill}" stroke="{stroke}"/>')
-    text(48,55,'esp32-rkstlohchab', 'title')
-    text(48,85,'Module connection schematic · ESP32-S3 N16R8 · current configuration · 2026-10-08','body')
-    text(48,112,'Shared signals route via breadboard rows S1–S6 below; all other signal connections use dedicated direct jumpers.','small')
-    shared_rows = {str(gpio): 'S'+str(i+1) for i,gpio in enumerate([11,12,13,15,47,48])}
-    rect(505,145,390,1035,'#e7f0f5','#8ba4b4')
-    text(700,180,'ESP32-S3 N16R8','heading','middle')
-    text(700,205,'16 MB flash · 8 MB OPI PSRAM','small','middle')
-    groups = [
-        ('TFT ILI9341', 'TPM408-2.8 display', 'left', 245, '#087e8b'),
-        ('Touch XPT2046', 'Touch shares display SPI', 'left', 495, '#087e8b'),
-        ('Joystick', 'KY-023 · active-low click', 'left', 725, '#9b6500'),
-        ('NRF24L01+', 'One PA/LNA radio; IRQ open', 'left', 910, '#6f55a5'),
-        ('MicroSD', 'Separate SPI reader', 'right', 245, '#287d48'),
-        ('CC1101', 'GDO2 remains unconnected', 'right', 465, '#287d48'),
-        ('PN532', 'SPI · SW1 OFF / SW2 ON', 'right', 695, '#bc5c22'),
-        ('GPS NEO-6M', '9600 baud · module RX open', 'right', 895, '#2968aa'),
-        ('IR receiver', 'KY-022 · test pending', 'right', 1020, '#96526d'),
-        ('IR transmitter', 'KY-005 · test pending', 'right', 1130, '#96526d'),
-    ]
-    for module, subtitle, side, y, color in groups:
-        pins = [row for row in rows if row['module'] == module]
-        x = 40 if side == 'left' else 1050
-        rect(x,y-36,310,78+len(pins)*25,'#ffffff')
-        text(x+16,y-10,module,'heading')
-        text(x+16,y+13,subtitle,'small')
-        for i,row in enumerate(pins):
-            py=y+43+i*25
-            gpio=row['esp32_gpio']
-            gpio_label = 'GPIO'+gpio + (' · '+shared_rows[gpio] if gpio in shared_rows else '')
-            if side == 'left':
-                text(x+16,py,row['module_pin'],'pin')
-                out.append(f'<path d="M350 {py-5} H505" stroke="{color}" stroke-width="2" fill="none"/>')
-                text(521,py,gpio_label,'pin')
-                ends=(350,505)
-            else:
-                text(x+16,py,row['module_pin'],'pin')
-                out.append(f'<path d="M895 {py-5} H1050" stroke="{color}" stroke-width="2" fill="none"/>')
-                text(878,py,gpio_label,'pin','end')
-                ends=(895,1050)
-            for px in ends:
-                out.append(f'<circle cx="{px}" cy="{py-5}" r="3" fill="{color}"/>')
-    text(700,1100,'Reserved: USB GPIO19/20','small','middle')
-    text(700,1125,'Flash 26–32 · PSRAM 33–37','small','middle')
-    text(700,1150,'RGB LED disabled on GPIO48','small','middle')
-    # Physical split points: one isolated five-hole strip per shared signal net.
-    rect(40,1220,1320,680,'#ffffff')
-    text(60,1260,'BREADBOARD · 400-point power distribution and shared signal splits','heading')
-    text(60,1288,'S1–S6 are suggested isolated row labels, not fixed printed row numbers. One ESP32 jumper feeds each row.','small')
-    text(60,1314,'Shared GPIO labels in the module diagram above refer to these same six rows.','small')
-    rect(350,1340,340,470,'#f0f3ee','#afbab2')
-    text(520,1370,'BREADBOARD SIGNAL ROWS','small','middle')
-    for i,gpio in enumerate([11,12,13,15,47,48]):
-        y=1410+i*66
-        label='S'+str(i+1)
-        color='#287d48' if gpio in (11,12,13) else '#087e8b'
-        text(60,y+6,'ESP32 GPIO'+str(gpio),'pin')
-        out.append(f'<path d="M220 {y} H395" stroke="{color}" stroke-width="2"/>')
-        text(370,y-14,label,'small')
-        out.append(f'<path d="M395 {y} H635" stroke="{color}" stroke-width="3"/>')
-        for j in range(5):
-            out.append(f'<circle cx="{395+j*60}" cy="{y}" r="7" fill="white" stroke="{color}" stroke-width="2"/>')
-        out.append(f'<path d="M635 {y} H720" stroke="{color}" stroke-width="2"/>')
-        endpoints=[row for row in rows if int(row['esp32_gpio']) == gpio]
-        short_names={'TFT ILI9341':'TFT','Touch XPT2046':'Touch','MicroSD':'SD'}
-        destinations=' + '.join(short_names.get(row['module'],row['module'])+' '+row['module_pin'] for row in endpoints)
-        text(740,y+6,destinations,'small')
-    text(60,1838,'POWER RAILS: ESP32 GND → common GND rail; ESP32 3V3 → separate labelled 3V3 rail.','body')
-    text(60,1866,'Keep every S-row isolated. Never bridge 3V3 and 5V. Check split power-rail continuity. Dedicated signals can bypass the breadboard.','small')
-    rect(40,1940,1320,215,'#ffffff')
-    text(60,1972,'POWER AND UNCONNECTED SIGNALS','heading')
-    for y,s in [(2000,'USB powers the tested build. All module grounds connect to common GND through the breadboard rails.'),
-                (2028,'3V3: joystick, NRF24, CC1101, TFT backlight; PN532 supply follows the documented 3V3 plan. Add 10–47 µF near NRF24.'),
-                (2056,'TFT VCC / SD / GPS / IR supply: confirm the exact breakout rating; MCU signal levels must be 3.3 V compatible.'),
-                (2084,'Leave GPS RX, NRF24 IRQ, and CC1101 GDO2 open. Touch IRQ46 is wired but polled. GPIO45/46 are strapping pins.'),
-                (2112,'Battery / TP4056 / switch are mechanical provisions only; no verified regulated battery power schematic is included.'),
-                (2140,'Sources: ESP32-DIV/BoardConfig.h · tft_espi-patch/User_Setup.h · hardware/pin-map.csv. See hardware/README.md.')]:
-        text(60,y,s,'small')
-    out.append('</svg>')
-    (HERE / 'wiring.svg').write_text('\n'.join(out)+'\n')
+    render(rows)
     print(f'Validated {len(rows)} signal connections and 7 display patch pins; wrote hardware/wiring.svg')
+
+
+def render(rows):
+    # Shared nets have exactly one ESP32-to-breadboard wire. Every component
+    # branch starts at its own hole on that connected breadboard strip.
+    width, height = 1600, 4140
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+           '<title id="title">ESP32 wiring through breadboard shared rows and dedicated direct jumpers</title>',
+           '<desc id="desc">Six ESP32 GPIO wires feed six isolated breadboard strips. Separate wires from each strip reach labelled component pins. Dedicated signals connect component pins directly to the ESP32. Components repeated across sections are the same physical modules.</desc>',
+           '<style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:21px;font-weight:700}.body{font-size:18px}.small{font-size:15px}.pin{font-size:18px;font-family:monospace}</style>',
+           f'<rect width="{width}" height="{height}" fill="#f5f8fa"/>']
+    def text(x,y,value,cls='body',anchor='start'):
+        out.append(f'<text x="{x}" y="{y}" class="{cls}" text-anchor="{anchor}">{html.escape(str(value))}</text>')
+    def rect(x,y,w,h,fill='#ffffff',stroke='#cfdae0'):
+        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="{fill}" stroke="{stroke}"/>')
+    def wire(path,color='#087e8b'):
+        out.append(f'<path d="{path}" fill="none" stroke="{color}" stroke-width="2.5"/>')
+    def dot(x,y,color):
+        out.append(f'<circle cx="{x}" cy="{y}" r="4" fill="{color}"/>')
+    text(40,52,'esp32-rkstlohchab · actual connection paths','title')
+    text(40,85,'ESP32-S3 N16R8 · GPIO-labelled schematic · 2026-10-08','body')
+    text(40,116,'Each shared component wire ends on the breadboard. Only dedicated signal wires connect directly to the ESP32.','small')
+    text(40,143,'Component names repeated in different sections refer to pins on the SAME physical module. Layout is schematic, not to scale.','small')
+    rect(40,185,260,2820,'#e7f0f5','#8ba4b4')
+    text(170,220,'ESP32-S3','heading','middle')
+    text(170,249,'N16R8 DevKit','body','middle')
+    text(170,278,'GPIO labels, not','small','middle')
+    text(170,300,'header positions','small','middle')
+    text(420,215,'SHARED SIGNALS: ESP32 → BREADBOARD → COMPONENT PINS','heading')
+    rect(420,255,480,1095,'#f0f3ee','#afbab2')
+    text(660,292,'BREADBOARD · 400-point','heading','middle')
+    text(660,321,'Six isolated connected five-hole strips','small','middle')
+    text(660,344,'S1–S6 are suggested row labels','small','middle')
+    for index,gpio in enumerate([11,12,13,15,47,48]):
+        y=430+index*170
+        label=f'S{index+1}'
+        color='#287d48' if gpio in (11,12,13) else '#087e8b'
+        endpoints=[row for row in rows if int(row['esp32_gpio'])==gpio]
+        text(275,y+6,f'GPIO{gpio}','pin','end')
+        wire(f'M300 {y} H470',color)
+        dot(300,y,color)
+        text(660,y-65,f'{label} · GPIO{gpio}','heading','middle')
+        rect(450,y-18,420,36,'#e3e9de','#afbab2')
+        wire(f'M470 {y} H850',color)
+        for j in range(5):
+            out.append(f'<circle cx="{470+j*95}" cy="{y}" r="7" fill="white" stroke="{color}" stroke-width="2"/>')
+        for j,row in enumerate(endpoints):
+            tap=565+j*95
+            target=y+(j-(len(endpoints)-1)/2)*46
+            wire(f'M{tap} {y} V{target} H1100',color)
+            dot(tap,y,color)
+            rect(1100,target-19,450,38)
+            text(1116,target+6,row['module']+' · '+row['module_pin'],'pin')
+            dot(1100,target,color)
+    text(420,1380,'Keep S1–S6 electrically separate. Every dot on a strip is connected; crossing wires elsewhere are not junctions.','small')
+    text(420,1410,'PN532 MISO42 is dedicated. NRF24 SCK17/MOSI18/MISO21 are dedicated. Do not join them to these strips.','small')
+    text(420,1470,'DEDICATED SIGNALS: COMPONENT PIN ↔ ESP32 GPIO','heading')
+    text(420,1500,'These jumpers bypass the breadboard. Each line below has one module pin and one ESP32 pin.','small')
+    y=1550
+    modules=list(dict.fromkeys(row['module'] for row in rows))
+    for module in modules:
+        pins=[row for row in rows if row['module']==module and
+              sum(other['esp32_gpio']==row['esp32_gpio'] for other in rows)==1]
+        if not pins:
+            continue
+        rect(1100,y-25,450,52+len(pins)*31)
+        text(1116,y+1,module,'heading')
+        for index,row in enumerate(pins):
+            py=y+33+index*31
+            text(275,py+6,'GPIO'+row['esp32_gpio'],'pin','end')
+            wire(f'M300 {py} H1100','#6f55a5')
+            text(1116,py+6,row['module_pin'],'pin')
+            dot(300,py,'#6f55a5');dot(1100,py,'#6f55a5')
+        y+=78+len(pins)*31
+    # The same breadboard also distributes ground and known 3V3 supplies.
+    text(420,3050,'BREADBOARD POWER RAILS · INDIVIDUAL COMPONENT POWER PINS','heading')
+    rect(420,3080,480,760,'#f0f3ee','#afbab2')
+    text(660,3120,'COMMON GND RAIL','heading','middle')
+    wire('M650 3160 V3500','#374957')
+    text(40,3166,'ESP32 GND','pin')
+    wire('M200 3160 H650','#374957')
+    ground_modules=[module for module in modules if module != 'Touch XPT2046']
+    for index,module in enumerate(ground_modules):
+        py=3160+index*36
+        wire(f'M650 {py} H1100','#374957')
+        dot(650,py,'#374957')
+        rect(1100,py-16,450,32)
+        text(1116,py+6,('TFT / touch panel' if module == 'TFT ILI9341' else module)+' · GND','pin')
+    text(660,3570,'3V3 RAIL','heading','middle')
+    wire('M650 3610 V3790','#c2413b')
+    text(40,3616,'ESP32 3V3','pin')
+    wire('M200 3610 H650','#c2413b')
+    supplies=['Joystick · VCC (+5V silkscreen)', 'NRF24L01+ · VCC',
+              'CC1101 · VCC', 'TFT ILI9341 · LED backlight',
+              'PN532 · VCC (documented plan)']
+    for index,label in enumerate(supplies):
+        py=3610+index*40
+        wire(f'M650 {py} H1100','#c2413b')
+        dot(650,py,'#c2413b')
+        rect(1100,py-16,450,32)
+        text(1116,py+6,label,'pin')
+    text(40,3890,'TFT module VCC, SD reader, GPS and IR VCC: verify your exact breakout supply rating; not assumed to share one voltage.','small')
+    text(40,3920,'Touch and TFT are on the same panel PCB. The diagram labels their signal blocks separately; connect the panel common GND.','small')
+    text(40,3950,'Leave GPS RX, NRF24 IRQ and CC1101 GDO2 open. Touch IRQ46 is wired but polled. Touch GPIO45/46 are strapping pins.','small')
+    text(40,3980,'USB19/20, flash26–32 and PSRAM33–37 are reserved. RGB on GPIO48 is disabled. Battery circuit remains unverified/disconnected.','small')
+    text(40,4010,'Breadboard rails may be split; check continuity. Never bridge 3V3 and 5V. GPIO labels identify signals, not physical header positions.','small')
+    text(40,4040,'Source: BoardConfig.h + pin-map.csv. See hardware/BREADBOARD.md and docs/ASSEMBLY-MISTAKES.md.','small')
+    out.append('</svg>')
+    (HERE/'wiring.svg').write_text('\n'.join(out)+'\n')
 
 
 if __name__ == '__main__':

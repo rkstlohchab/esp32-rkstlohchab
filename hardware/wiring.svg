@@ -1,302 +1,357 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2200" viewBox="0 0 1400 2200" role="img" aria-labelledby="title desc">
-<title id="title">esp32-rkstlohchab current module wiring</title>
-<desc id="desc">GPIO connections for the ESP32-S3 N16R8 bench build, with shared nets repeated by module. Power constraints are listed separately.</desc>
-<style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}.pin{font-size:16px;font-family:monospace}.muted{fill:#536978}</style>
-<rect width="1400" height="2200" fill="#f5f8fa"/>
-<text x="48" y="55" class="title" text-anchor="start">esp32-rkstlohchab</text>
-<text x="48" y="85" class="body" text-anchor="start">Module connection schematic · ESP32-S3 N16R8 · current configuration · 2026-10-08</text>
-<text x="48" y="112" class="small" text-anchor="start">Shared signals route via breadboard rows S1–S6 below; all other signal connections use dedicated direct jumpers.</text>
-<rect x="505" y="145" width="390" height="1035" rx="12" fill="#e7f0f5" stroke="#8ba4b4"/>
-<text x="700" y="180" class="heading" text-anchor="middle">ESP32-S3 N16R8</text>
-<text x="700" y="205" class="small" text-anchor="middle">16 MB flash · 8 MB OPI PSRAM</text>
-<rect x="40" y="209" width="310" height="228" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="56" y="235" class="heading" text-anchor="start">TFT ILI9341</text>
-<text x="56" y="258" class="small" text-anchor="start">TPM408-2.8 display</text>
-<text x="56" y="288" class="pin" text-anchor="start">SDI / MOSI</text>
-<path d="M350 283 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="288" class="pin" text-anchor="start">GPIO15 · S4</text>
-<circle cx="350" cy="283" r="3" fill="#087e8b"/>
-<circle cx="505" cy="283" r="3" fill="#087e8b"/>
-<text x="56" y="313" class="pin" text-anchor="start">SCK</text>
-<path d="M350 308 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="313" class="pin" text-anchor="start">GPIO47 · S5</text>
-<circle cx="350" cy="308" r="3" fill="#087e8b"/>
-<circle cx="505" cy="308" r="3" fill="#087e8b"/>
-<text x="56" y="338" class="pin" text-anchor="start">SDO / MISO</text>
-<path d="M350 333 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="338" class="pin" text-anchor="start">GPIO48 · S6</text>
-<circle cx="350" cy="333" r="3" fill="#087e8b"/>
-<circle cx="505" cy="333" r="3" fill="#087e8b"/>
-<text x="56" y="363" class="pin" text-anchor="start">CS</text>
-<path d="M350 358 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="363" class="pin" text-anchor="start">GPIO39</text>
-<circle cx="350" cy="358" r="3" fill="#087e8b"/>
-<circle cx="505" cy="358" r="3" fill="#087e8b"/>
-<text x="56" y="388" class="pin" text-anchor="start">DC</text>
-<path d="M350 383 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="388" class="pin" text-anchor="start">GPIO9</text>
-<circle cx="350" cy="383" r="3" fill="#087e8b"/>
-<circle cx="505" cy="383" r="3" fill="#087e8b"/>
-<text x="56" y="413" class="pin" text-anchor="start">RESET</text>
-<path d="M350 408 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="413" class="pin" text-anchor="start">GPIO8</text>
-<circle cx="350" cy="408" r="3" fill="#087e8b"/>
-<circle cx="505" cy="408" r="3" fill="#087e8b"/>
-<rect x="40" y="459" width="310" height="203" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="56" y="485" class="heading" text-anchor="start">Touch XPT2046</text>
-<text x="56" y="508" class="small" text-anchor="start">Touch shares display SPI</text>
-<text x="56" y="538" class="pin" text-anchor="start">T_DIN</text>
-<path d="M350 533 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="538" class="pin" text-anchor="start">GPIO15 · S4</text>
-<circle cx="350" cy="533" r="3" fill="#087e8b"/>
-<circle cx="505" cy="533" r="3" fill="#087e8b"/>
-<text x="56" y="563" class="pin" text-anchor="start">T_CLK</text>
-<path d="M350 558 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="563" class="pin" text-anchor="start">GPIO47 · S5</text>
-<circle cx="350" cy="558" r="3" fill="#087e8b"/>
-<circle cx="505" cy="558" r="3" fill="#087e8b"/>
-<text x="56" y="588" class="pin" text-anchor="start">T_DO</text>
-<path d="M350 583 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="588" class="pin" text-anchor="start">GPIO48 · S6</text>
-<circle cx="350" cy="583" r="3" fill="#087e8b"/>
-<circle cx="505" cy="583" r="3" fill="#087e8b"/>
-<text x="56" y="613" class="pin" text-anchor="start">T_CS</text>
-<path d="M350 608 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="613" class="pin" text-anchor="start">GPIO45</text>
-<circle cx="350" cy="608" r="3" fill="#087e8b"/>
-<circle cx="505" cy="608" r="3" fill="#087e8b"/>
-<text x="56" y="638" class="pin" text-anchor="start">T_IRQ</text>
-<path d="M350 633 H505" stroke="#087e8b" stroke-width="2" fill="none"/>
-<text x="521" y="638" class="pin" text-anchor="start">GPIO46</text>
-<circle cx="350" cy="633" r="3" fill="#087e8b"/>
-<circle cx="505" cy="633" r="3" fill="#087e8b"/>
-<rect x="40" y="689" width="310" height="153" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="56" y="715" class="heading" text-anchor="start">Joystick</text>
-<text x="56" y="738" class="small" text-anchor="start">KY-023 · active-low click</text>
-<text x="56" y="768" class="pin" text-anchor="start">VRX</text>
-<path d="M350 763 H505" stroke="#9b6500" stroke-width="2" fill="none"/>
-<text x="521" y="768" class="pin" text-anchor="start">GPIO4</text>
-<circle cx="350" cy="763" r="3" fill="#9b6500"/>
-<circle cx="505" cy="763" r="3" fill="#9b6500"/>
-<text x="56" y="793" class="pin" text-anchor="start">VRY</text>
-<path d="M350 788 H505" stroke="#9b6500" stroke-width="2" fill="none"/>
-<text x="521" y="793" class="pin" text-anchor="start">GPIO5</text>
-<circle cx="350" cy="788" r="3" fill="#9b6500"/>
-<circle cx="505" cy="788" r="3" fill="#9b6500"/>
-<text x="56" y="818" class="pin" text-anchor="start">SW</text>
-<path d="M350 813 H505" stroke="#9b6500" stroke-width="2" fill="none"/>
-<text x="521" y="818" class="pin" text-anchor="start">GPIO6</text>
-<circle cx="350" cy="813" r="3" fill="#9b6500"/>
-<circle cx="505" cy="813" r="3" fill="#9b6500"/>
-<rect x="40" y="874" width="310" height="203" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="56" y="900" class="heading" text-anchor="start">NRF24L01+</text>
-<text x="56" y="923" class="small" text-anchor="start">One PA/LNA radio; IRQ open</text>
-<text x="56" y="953" class="pin" text-anchor="start">CSN</text>
-<path d="M350 948 H505" stroke="#6f55a5" stroke-width="2" fill="none"/>
-<text x="521" y="953" class="pin" text-anchor="start">GPIO7</text>
-<circle cx="350" cy="948" r="3" fill="#6f55a5"/>
-<circle cx="505" cy="948" r="3" fill="#6f55a5"/>
-<text x="56" y="978" class="pin" text-anchor="start">CE</text>
-<path d="M350 973 H505" stroke="#6f55a5" stroke-width="2" fill="none"/>
-<text x="521" y="978" class="pin" text-anchor="start">GPIO16</text>
-<circle cx="350" cy="973" r="3" fill="#6f55a5"/>
-<circle cx="505" cy="973" r="3" fill="#6f55a5"/>
-<text x="56" y="1003" class="pin" text-anchor="start">SCK</text>
-<path d="M350 998 H505" stroke="#6f55a5" stroke-width="2" fill="none"/>
-<text x="521" y="1003" class="pin" text-anchor="start">GPIO17</text>
-<circle cx="350" cy="998" r="3" fill="#6f55a5"/>
-<circle cx="505" cy="998" r="3" fill="#6f55a5"/>
-<text x="56" y="1028" class="pin" text-anchor="start">MOSI</text>
-<path d="M350 1023 H505" stroke="#6f55a5" stroke-width="2" fill="none"/>
-<text x="521" y="1028" class="pin" text-anchor="start">GPIO18</text>
-<circle cx="350" cy="1023" r="3" fill="#6f55a5"/>
-<circle cx="505" cy="1023" r="3" fill="#6f55a5"/>
-<text x="56" y="1053" class="pin" text-anchor="start">MISO</text>
-<path d="M350 1048 H505" stroke="#6f55a5" stroke-width="2" fill="none"/>
-<text x="521" y="1053" class="pin" text-anchor="start">GPIO21</text>
-<circle cx="350" cy="1048" r="3" fill="#6f55a5"/>
-<circle cx="505" cy="1048" r="3" fill="#6f55a5"/>
-<rect x="1050" y="209" width="310" height="178" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="235" class="heading" text-anchor="start">MicroSD</text>
-<text x="1066" y="258" class="small" text-anchor="start">Separate SPI reader</text>
-<text x="1066" y="288" class="pin" text-anchor="start">CS</text>
-<path d="M895 283 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="288" class="pin" text-anchor="end">GPIO10</text>
-<circle cx="895" cy="283" r="3" fill="#287d48"/>
-<circle cx="1050" cy="283" r="3" fill="#287d48"/>
-<text x="1066" y="313" class="pin" text-anchor="start">MOSI / DI</text>
-<path d="M895 308 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="313" class="pin" text-anchor="end">GPIO11 · S1</text>
-<circle cx="895" cy="308" r="3" fill="#287d48"/>
-<circle cx="1050" cy="308" r="3" fill="#287d48"/>
-<text x="1066" y="338" class="pin" text-anchor="start">SCK / CLK</text>
-<path d="M895 333 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="338" class="pin" text-anchor="end">GPIO12 · S2</text>
-<circle cx="895" cy="333" r="3" fill="#287d48"/>
-<circle cx="1050" cy="333" r="3" fill="#287d48"/>
-<text x="1066" y="363" class="pin" text-anchor="start">MISO / DO</text>
-<path d="M895 358 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="363" class="pin" text-anchor="end">GPIO13 · S3</text>
-<circle cx="895" cy="358" r="3" fill="#287d48"/>
-<circle cx="1050" cy="358" r="3" fill="#287d48"/>
-<rect x="1050" y="429" width="310" height="203" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="455" class="heading" text-anchor="start">CC1101</text>
-<text x="1066" y="478" class="small" text-anchor="start">GDO2 remains unconnected</text>
-<text x="1066" y="508" class="pin" text-anchor="start">CS</text>
-<path d="M895 503 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="508" class="pin" text-anchor="end">GPIO40</text>
-<circle cx="895" cy="503" r="3" fill="#287d48"/>
-<circle cx="1050" cy="503" r="3" fill="#287d48"/>
-<text x="1066" y="533" class="pin" text-anchor="start">MOSI</text>
-<path d="M895 528 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="533" class="pin" text-anchor="end">GPIO11 · S1</text>
-<circle cx="895" cy="528" r="3" fill="#287d48"/>
-<circle cx="1050" cy="528" r="3" fill="#287d48"/>
-<text x="1066" y="558" class="pin" text-anchor="start">SCK</text>
-<path d="M895 553 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="558" class="pin" text-anchor="end">GPIO12 · S2</text>
-<circle cx="895" cy="553" r="3" fill="#287d48"/>
-<circle cx="1050" cy="553" r="3" fill="#287d48"/>
-<text x="1066" y="583" class="pin" text-anchor="start">MISO</text>
-<path d="M895 578 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="583" class="pin" text-anchor="end">GPIO13 · S3</text>
-<circle cx="895" cy="578" r="3" fill="#287d48"/>
-<circle cx="1050" cy="578" r="3" fill="#287d48"/>
-<text x="1066" y="608" class="pin" text-anchor="start">GDO0</text>
-<path d="M895 603 H1050" stroke="#287d48" stroke-width="2" fill="none"/>
-<text x="878" y="608" class="pin" text-anchor="end">GPIO1</text>
-<circle cx="895" cy="603" r="3" fill="#287d48"/>
-<circle cx="1050" cy="603" r="3" fill="#287d48"/>
-<rect x="1050" y="659" width="310" height="178" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="685" class="heading" text-anchor="start">PN532</text>
-<text x="1066" y="708" class="small" text-anchor="start">SPI · SW1 OFF / SW2 ON</text>
-<text x="1066" y="738" class="pin" text-anchor="start">SS / CS</text>
-<path d="M895 733 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="738" class="pin" text-anchor="end">GPIO2</text>
-<circle cx="895" cy="733" r="3" fill="#bc5c22"/>
-<circle cx="1050" cy="733" r="3" fill="#bc5c22"/>
-<text x="1066" y="763" class="pin" text-anchor="start">MOSI</text>
-<path d="M895 758 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="763" class="pin" text-anchor="end">GPIO11 · S1</text>
-<circle cx="895" cy="758" r="3" fill="#bc5c22"/>
-<circle cx="1050" cy="758" r="3" fill="#bc5c22"/>
-<text x="1066" y="788" class="pin" text-anchor="start">SCK</text>
-<path d="M895 783 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="788" class="pin" text-anchor="end">GPIO12 · S2</text>
-<circle cx="895" cy="783" r="3" fill="#bc5c22"/>
-<circle cx="1050" cy="783" r="3" fill="#bc5c22"/>
-<text x="1066" y="813" class="pin" text-anchor="start">MISO</text>
-<path d="M895 808 H1050" stroke="#bc5c22" stroke-width="2" fill="none"/>
-<text x="878" y="813" class="pin" text-anchor="end">GPIO42</text>
-<circle cx="895" cy="808" r="3" fill="#bc5c22"/>
-<circle cx="1050" cy="808" r="3" fill="#bc5c22"/>
-<rect x="1050" y="859" width="310" height="103" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="885" class="heading" text-anchor="start">GPS NEO-6M</text>
-<text x="1066" y="908" class="small" text-anchor="start">9600 baud · module RX open</text>
-<text x="1066" y="938" class="pin" text-anchor="start">TX</text>
-<path d="M895 933 H1050" stroke="#2968aa" stroke-width="2" fill="none"/>
-<text x="878" y="938" class="pin" text-anchor="end">GPIO41</text>
-<circle cx="895" cy="933" r="3" fill="#2968aa"/>
-<circle cx="1050" cy="933" r="3" fill="#2968aa"/>
-<rect x="1050" y="984" width="310" height="103" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="1010" class="heading" text-anchor="start">IR receiver</text>
-<text x="1066" y="1033" class="small" text-anchor="start">KY-022 · test pending</text>
-<text x="1066" y="1063" class="pin" text-anchor="start">OUT</text>
-<path d="M895 1058 H1050" stroke="#96526d" stroke-width="2" fill="none"/>
-<text x="878" y="1063" class="pin" text-anchor="end">GPIO14</text>
-<circle cx="895" cy="1058" r="3" fill="#96526d"/>
-<circle cx="1050" cy="1058" r="3" fill="#96526d"/>
-<rect x="1050" y="1094" width="310" height="103" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="1066" y="1120" class="heading" text-anchor="start">IR transmitter</text>
-<text x="1066" y="1143" class="small" text-anchor="start">KY-005 · test pending</text>
-<text x="1066" y="1173" class="pin" text-anchor="start">Signal</text>
-<path d="M895 1168 H1050" stroke="#96526d" stroke-width="2" fill="none"/>
-<text x="878" y="1173" class="pin" text-anchor="end">GPIO38</text>
-<circle cx="895" cy="1168" r="3" fill="#96526d"/>
-<circle cx="1050" cy="1168" r="3" fill="#96526d"/>
-<text x="700" y="1100" class="small" text-anchor="middle">Reserved: USB GPIO19/20</text>
-<text x="700" y="1125" class="small" text-anchor="middle">Flash 26–32 · PSRAM 33–37</text>
-<text x="700" y="1150" class="small" text-anchor="middle">RGB LED disabled on GPIO48</text>
-<rect x="40" y="1220" width="1320" height="680" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="60" y="1260" class="heading" text-anchor="start">BREADBOARD · 400-point power distribution and shared signal splits</text>
-<text x="60" y="1288" class="small" text-anchor="start">S1–S6 are suggested isolated row labels, not fixed printed row numbers. One ESP32 jumper feeds each row.</text>
-<text x="60" y="1314" class="small" text-anchor="start">Shared GPIO labels in the module diagram above refer to these same six rows.</text>
-<rect x="350" y="1340" width="340" height="470" rx="12" fill="#f0f3ee" stroke="#afbab2"/>
-<text x="520" y="1370" class="small" text-anchor="middle">BREADBOARD SIGNAL ROWS</text>
-<text x="60" y="1416" class="pin" text-anchor="start">ESP32 GPIO11</text>
-<path d="M220 1410 H395" stroke="#287d48" stroke-width="2"/>
-<text x="370" y="1396" class="small" text-anchor="start">S1</text>
-<path d="M395 1410 H635" stroke="#287d48" stroke-width="3"/>
-<circle cx="395" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="455" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="515" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="575" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="635" cy="1410" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<path d="M635 1410 H720" stroke="#287d48" stroke-width="2"/>
-<text x="740" y="1416" class="small" text-anchor="start">SD MOSI / DI + CC1101 MOSI + PN532 MOSI</text>
-<text x="60" y="1482" class="pin" text-anchor="start">ESP32 GPIO12</text>
-<path d="M220 1476 H395" stroke="#287d48" stroke-width="2"/>
-<text x="370" y="1462" class="small" text-anchor="start">S2</text>
-<path d="M395 1476 H635" stroke="#287d48" stroke-width="3"/>
-<circle cx="395" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="455" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="515" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="575" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="635" cy="1476" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<path d="M635 1476 H720" stroke="#287d48" stroke-width="2"/>
-<text x="740" y="1482" class="small" text-anchor="start">SD SCK / CLK + CC1101 SCK + PN532 SCK</text>
-<text x="60" y="1548" class="pin" text-anchor="start">ESP32 GPIO13</text>
-<path d="M220 1542 H395" stroke="#287d48" stroke-width="2"/>
-<text x="370" y="1528" class="small" text-anchor="start">S3</text>
-<path d="M395 1542 H635" stroke="#287d48" stroke-width="3"/>
-<circle cx="395" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="455" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="515" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="575" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<circle cx="635" cy="1542" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
-<path d="M635 1542 H720" stroke="#287d48" stroke-width="2"/>
-<text x="740" y="1548" class="small" text-anchor="start">SD MISO / DO + CC1101 MISO</text>
-<text x="60" y="1614" class="pin" text-anchor="start">ESP32 GPIO15</text>
-<path d="M220 1608 H395" stroke="#087e8b" stroke-width="2"/>
-<text x="370" y="1594" class="small" text-anchor="start">S4</text>
-<path d="M395 1608 H635" stroke="#087e8b" stroke-width="3"/>
-<circle cx="395" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="455" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="515" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="575" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="635" cy="1608" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<path d="M635 1608 H720" stroke="#087e8b" stroke-width="2"/>
-<text x="740" y="1614" class="small" text-anchor="start">TFT SDI / MOSI + Touch T_DIN</text>
-<text x="60" y="1680" class="pin" text-anchor="start">ESP32 GPIO47</text>
-<path d="M220 1674 H395" stroke="#087e8b" stroke-width="2"/>
-<text x="370" y="1660" class="small" text-anchor="start">S5</text>
-<path d="M395 1674 H635" stroke="#087e8b" stroke-width="3"/>
-<circle cx="395" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="455" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="515" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="575" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="635" cy="1674" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<path d="M635 1674 H720" stroke="#087e8b" stroke-width="2"/>
-<text x="740" y="1680" class="small" text-anchor="start">TFT SCK + Touch T_CLK</text>
-<text x="60" y="1746" class="pin" text-anchor="start">ESP32 GPIO48</text>
-<path d="M220 1740 H395" stroke="#087e8b" stroke-width="2"/>
-<text x="370" y="1726" class="small" text-anchor="start">S6</text>
-<path d="M395 1740 H635" stroke="#087e8b" stroke-width="3"/>
-<circle cx="395" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="455" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="515" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="575" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<circle cx="635" cy="1740" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
-<path d="M635 1740 H720" stroke="#087e8b" stroke-width="2"/>
-<text x="740" y="1746" class="small" text-anchor="start">TFT SDO / MISO + Touch T_DO</text>
-<text x="60" y="1838" class="body" text-anchor="start">POWER RAILS: ESP32 GND → common GND rail; ESP32 3V3 → separate labelled 3V3 rail.</text>
-<text x="60" y="1866" class="small" text-anchor="start">Keep every S-row isolated. Never bridge 3V3 and 5V. Check split power-rail continuity. Dedicated signals can bypass the breadboard.</text>
-<rect x="40" y="1940" width="1320" height="215" rx="12" fill="#ffffff" stroke="#cfdae0"/>
-<text x="60" y="1972" class="heading" text-anchor="start">POWER AND UNCONNECTED SIGNALS</text>
-<text x="60" y="2000" class="small" text-anchor="start">USB powers the tested build. All module grounds connect to common GND through the breadboard rails.</text>
-<text x="60" y="2028" class="small" text-anchor="start">3V3: joystick, NRF24, CC1101, TFT backlight; PN532 supply follows the documented 3V3 plan. Add 10–47 µF near NRF24.</text>
-<text x="60" y="2056" class="small" text-anchor="start">TFT VCC / SD / GPS / IR supply: confirm the exact breakout rating; MCU signal levels must be 3.3 V compatible.</text>
-<text x="60" y="2084" class="small" text-anchor="start">Leave GPS RX, NRF24 IRQ, and CC1101 GDO2 open. Touch IRQ46 is wired but polled. GPIO45/46 are strapping pins.</text>
-<text x="60" y="2112" class="small" text-anchor="start">Battery / TP4056 / switch are mechanical provisions only; no verified regulated battery power schematic is included.</text>
-<text x="60" y="2140" class="small" text-anchor="start">Sources: ESP32-DIV/BoardConfig.h · tft_espi-patch/User_Setup.h · hardware/pin-map.csv. See hardware/README.md.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="4140" viewBox="0 0 1600 4140" role="img" aria-labelledby="title desc">
+<title id="title">ESP32 wiring through breadboard shared rows and dedicated direct jumpers</title>
+<desc id="desc">Six ESP32 GPIO wires feed six isolated breadboard strips. Separate wires from each strip reach labelled component pins. Dedicated signals connect component pins directly to the ESP32. Components repeated across sections are the same physical modules.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:21px;font-weight:700}.body{font-size:18px}.small{font-size:15px}.pin{font-size:18px;font-family:monospace}</style>
+<rect width="1600" height="4140" fill="#f5f8fa"/>
+<text x="40" y="52" class="title" text-anchor="start">esp32-rkstlohchab · actual connection paths</text>
+<text x="40" y="85" class="body" text-anchor="start">ESP32-S3 N16R8 · GPIO-labelled schematic · 2026-10-08</text>
+<text x="40" y="116" class="small" text-anchor="start">Each shared component wire ends on the breadboard. Only dedicated signal wires connect directly to the ESP32.</text>
+<text x="40" y="143" class="small" text-anchor="start">Component names repeated in different sections refer to pins on the SAME physical module. Layout is schematic, not to scale.</text>
+<rect x="40" y="185" width="260" height="2820" rx="12" fill="#e7f0f5" stroke="#8ba4b4"/>
+<text x="170" y="220" class="heading" text-anchor="middle">ESP32-S3</text>
+<text x="170" y="249" class="body" text-anchor="middle">N16R8 DevKit</text>
+<text x="170" y="278" class="small" text-anchor="middle">GPIO labels, not</text>
+<text x="170" y="300" class="small" text-anchor="middle">header positions</text>
+<text x="420" y="215" class="heading" text-anchor="start">SHARED SIGNALS: ESP32 → BREADBOARD → COMPONENT PINS</text>
+<rect x="420" y="255" width="480" height="1095" rx="12" fill="#f0f3ee" stroke="#afbab2"/>
+<text x="660" y="292" class="heading" text-anchor="middle">BREADBOARD · 400-point</text>
+<text x="660" y="321" class="small" text-anchor="middle">Six isolated connected five-hole strips</text>
+<text x="660" y="344" class="small" text-anchor="middle">S1–S6 are suggested row labels</text>
+<text x="275" y="436" class="pin" text-anchor="end">GPIO11</text>
+<path d="M300 430 H470" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="300" cy="430" r="4" fill="#287d48"/>
+<text x="660" y="365" class="heading" text-anchor="middle">S1 · GPIO11</text>
+<rect x="450" y="412" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 430 H850" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="470" cy="430" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="565" cy="430" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="660" cy="430" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="755" cy="430" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="850" cy="430" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M565 430 V384.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="565" cy="430" r="4" fill="#287d48"/>
+<rect x="1100" y="365.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="390.0" class="pin" text-anchor="start">MicroSD · MOSI / DI</text>
+<circle cx="1100" cy="384.0" r="4" fill="#287d48"/>
+<path d="M660 430 V430.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="660" cy="430" r="4" fill="#287d48"/>
+<rect x="1100" y="411.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="436.0" class="pin" text-anchor="start">CC1101 · MOSI</text>
+<circle cx="1100" cy="430.0" r="4" fill="#287d48"/>
+<path d="M755 430 V476.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="755" cy="430" r="4" fill="#287d48"/>
+<rect x="1100" y="457.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="482.0" class="pin" text-anchor="start">PN532 · MOSI</text>
+<circle cx="1100" cy="476.0" r="4" fill="#287d48"/>
+<text x="275" y="606" class="pin" text-anchor="end">GPIO12</text>
+<path d="M300 600 H470" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="300" cy="600" r="4" fill="#287d48"/>
+<text x="660" y="535" class="heading" text-anchor="middle">S2 · GPIO12</text>
+<rect x="450" y="582" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 600 H850" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="470" cy="600" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="565" cy="600" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="660" cy="600" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="755" cy="600" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="850" cy="600" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M565 600 V554.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="565" cy="600" r="4" fill="#287d48"/>
+<rect x="1100" y="535.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="560.0" class="pin" text-anchor="start">MicroSD · SCK / CLK</text>
+<circle cx="1100" cy="554.0" r="4" fill="#287d48"/>
+<path d="M660 600 V600.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="660" cy="600" r="4" fill="#287d48"/>
+<rect x="1100" y="581.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="606.0" class="pin" text-anchor="start">CC1101 · SCK</text>
+<circle cx="1100" cy="600.0" r="4" fill="#287d48"/>
+<path d="M755 600 V646.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="755" cy="600" r="4" fill="#287d48"/>
+<rect x="1100" y="627.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="652.0" class="pin" text-anchor="start">PN532 · SCK</text>
+<circle cx="1100" cy="646.0" r="4" fill="#287d48"/>
+<text x="275" y="776" class="pin" text-anchor="end">GPIO13</text>
+<path d="M300 770 H470" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="300" cy="770" r="4" fill="#287d48"/>
+<text x="660" y="705" class="heading" text-anchor="middle">S3 · GPIO13</text>
+<rect x="450" y="752" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 770 H850" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="470" cy="770" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="565" cy="770" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="660" cy="770" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="755" cy="770" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<circle cx="850" cy="770" r="7" fill="white" stroke="#287d48" stroke-width="2"/>
+<path d="M565 770 V747.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="565" cy="770" r="4" fill="#287d48"/>
+<rect x="1100" y="728.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="753.0" class="pin" text-anchor="start">MicroSD · MISO / DO</text>
+<circle cx="1100" cy="747.0" r="4" fill="#287d48"/>
+<path d="M660 770 V793.0 H1100" fill="none" stroke="#287d48" stroke-width="2.5"/>
+<circle cx="660" cy="770" r="4" fill="#287d48"/>
+<rect x="1100" y="774.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="799.0" class="pin" text-anchor="start">CC1101 · MISO</text>
+<circle cx="1100" cy="793.0" r="4" fill="#287d48"/>
+<text x="275" y="946" class="pin" text-anchor="end">GPIO15</text>
+<path d="M300 940 H470" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="300" cy="940" r="4" fill="#087e8b"/>
+<text x="660" y="875" class="heading" text-anchor="middle">S4 · GPIO15</text>
+<rect x="450" y="922" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 940 H850" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="470" cy="940" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="565" cy="940" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="660" cy="940" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="755" cy="940" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="850" cy="940" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M565 940 V917.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="565" cy="940" r="4" fill="#087e8b"/>
+<rect x="1100" y="898.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="923.0" class="pin" text-anchor="start">TFT ILI9341 · SDI / MOSI</text>
+<circle cx="1100" cy="917.0" r="4" fill="#087e8b"/>
+<path d="M660 940 V963.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="660" cy="940" r="4" fill="#087e8b"/>
+<rect x="1100" y="944.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="969.0" class="pin" text-anchor="start">Touch XPT2046 · T_DIN</text>
+<circle cx="1100" cy="963.0" r="4" fill="#087e8b"/>
+<text x="275" y="1116" class="pin" text-anchor="end">GPIO47</text>
+<path d="M300 1110 H470" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="300" cy="1110" r="4" fill="#087e8b"/>
+<text x="660" y="1045" class="heading" text-anchor="middle">S5 · GPIO47</text>
+<rect x="450" y="1092" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 1110 H850" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="470" cy="1110" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="565" cy="1110" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="660" cy="1110" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="755" cy="1110" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="850" cy="1110" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M565 1110 V1087.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="565" cy="1110" r="4" fill="#087e8b"/>
+<rect x="1100" y="1068.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1093.0" class="pin" text-anchor="start">TFT ILI9341 · SCK</text>
+<circle cx="1100" cy="1087.0" r="4" fill="#087e8b"/>
+<path d="M660 1110 V1133.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="660" cy="1110" r="4" fill="#087e8b"/>
+<rect x="1100" y="1114.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1139.0" class="pin" text-anchor="start">Touch XPT2046 · T_CLK</text>
+<circle cx="1100" cy="1133.0" r="4" fill="#087e8b"/>
+<text x="275" y="1286" class="pin" text-anchor="end">GPIO48</text>
+<path d="M300 1280 H470" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="300" cy="1280" r="4" fill="#087e8b"/>
+<text x="660" y="1215" class="heading" text-anchor="middle">S6 · GPIO48</text>
+<rect x="450" y="1262" width="420" height="36" rx="12" fill="#e3e9de" stroke="#afbab2"/>
+<path d="M470 1280 H850" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="470" cy="1280" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="565" cy="1280" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="660" cy="1280" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="755" cy="1280" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<circle cx="850" cy="1280" r="7" fill="white" stroke="#087e8b" stroke-width="2"/>
+<path d="M565 1280 V1257.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="565" cy="1280" r="4" fill="#087e8b"/>
+<rect x="1100" y="1238.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1263.0" class="pin" text-anchor="start">TFT ILI9341 · SDO / MISO</text>
+<circle cx="1100" cy="1257.0" r="4" fill="#087e8b"/>
+<path d="M660 1280 V1303.0 H1100" fill="none" stroke="#087e8b" stroke-width="2.5"/>
+<circle cx="660" cy="1280" r="4" fill="#087e8b"/>
+<rect x="1100" y="1284.0" width="450" height="38" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1309.0" class="pin" text-anchor="start">Touch XPT2046 · T_DO</text>
+<circle cx="1100" cy="1303.0" r="4" fill="#087e8b"/>
+<text x="420" y="1380" class="small" text-anchor="start">Keep S1–S6 electrically separate. Every dot on a strip is connected; crossing wires elsewhere are not junctions.</text>
+<text x="420" y="1410" class="small" text-anchor="start">PN532 MISO42 is dedicated. NRF24 SCK17/MOSI18/MISO21 are dedicated. Do not join them to these strips.</text>
+<text x="420" y="1470" class="heading" text-anchor="start">DEDICATED SIGNALS: COMPONENT PIN ↔ ESP32 GPIO</text>
+<text x="420" y="1500" class="small" text-anchor="start">These jumpers bypass the breadboard. Each line below has one module pin and one ESP32 pin.</text>
+<rect x="1100" y="1525" width="450" height="145" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1551" class="heading" text-anchor="start">Joystick</text>
+<text x="275" y="1589" class="pin" text-anchor="end">GPIO4</text>
+<path d="M300 1583 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1589" class="pin" text-anchor="start">VRX</text>
+<circle cx="300" cy="1583" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1583" r="4" fill="#6f55a5"/>
+<text x="275" y="1620" class="pin" text-anchor="end">GPIO5</text>
+<path d="M300 1614 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1620" class="pin" text-anchor="start">VRY</text>
+<circle cx="300" cy="1614" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1614" r="4" fill="#6f55a5"/>
+<text x="275" y="1651" class="pin" text-anchor="end">GPIO6</text>
+<path d="M300 1645 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1651" class="pin" text-anchor="start">SW</text>
+<circle cx="300" cy="1645" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1645" r="4" fill="#6f55a5"/>
+<rect x="1100" y="1696" width="450" height="145" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1722" class="heading" text-anchor="start">TFT ILI9341</text>
+<text x="275" y="1760" class="pin" text-anchor="end">GPIO39</text>
+<path d="M300 1754 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1760" class="pin" text-anchor="start">CS</text>
+<circle cx="300" cy="1754" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1754" r="4" fill="#6f55a5"/>
+<text x="275" y="1791" class="pin" text-anchor="end">GPIO9</text>
+<path d="M300 1785 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1791" class="pin" text-anchor="start">DC</text>
+<circle cx="300" cy="1785" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1785" r="4" fill="#6f55a5"/>
+<text x="275" y="1822" class="pin" text-anchor="end">GPIO8</text>
+<path d="M300 1816 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1822" class="pin" text-anchor="start">RESET</text>
+<circle cx="300" cy="1816" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1816" r="4" fill="#6f55a5"/>
+<rect x="1100" y="1867" width="450" height="114" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="1893" class="heading" text-anchor="start">Touch XPT2046</text>
+<text x="275" y="1931" class="pin" text-anchor="end">GPIO45</text>
+<path d="M300 1925 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1931" class="pin" text-anchor="start">T_CS</text>
+<circle cx="300" cy="1925" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1925" r="4" fill="#6f55a5"/>
+<text x="275" y="1962" class="pin" text-anchor="end">GPIO46</text>
+<path d="M300 1956 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="1962" class="pin" text-anchor="start">T_IRQ</text>
+<circle cx="300" cy="1956" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="1956" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2007" width="450" height="207" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2033" class="heading" text-anchor="start">NRF24L01+</text>
+<text x="275" y="2071" class="pin" text-anchor="end">GPIO7</text>
+<path d="M300 2065 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2071" class="pin" text-anchor="start">CSN</text>
+<circle cx="300" cy="2065" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2065" r="4" fill="#6f55a5"/>
+<text x="275" y="2102" class="pin" text-anchor="end">GPIO16</text>
+<path d="M300 2096 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2102" class="pin" text-anchor="start">CE</text>
+<circle cx="300" cy="2096" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2096" r="4" fill="#6f55a5"/>
+<text x="275" y="2133" class="pin" text-anchor="end">GPIO17</text>
+<path d="M300 2127 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2133" class="pin" text-anchor="start">SCK</text>
+<circle cx="300" cy="2127" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2127" r="4" fill="#6f55a5"/>
+<text x="275" y="2164" class="pin" text-anchor="end">GPIO18</text>
+<path d="M300 2158 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2164" class="pin" text-anchor="start">MOSI</text>
+<circle cx="300" cy="2158" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2158" r="4" fill="#6f55a5"/>
+<text x="275" y="2195" class="pin" text-anchor="end">GPIO21</text>
+<path d="M300 2189 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2195" class="pin" text-anchor="start">MISO</text>
+<circle cx="300" cy="2189" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2189" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2240" width="450" height="83" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2266" class="heading" text-anchor="start">MicroSD</text>
+<text x="275" y="2304" class="pin" text-anchor="end">GPIO10</text>
+<path d="M300 2298 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2304" class="pin" text-anchor="start">CS</text>
+<circle cx="300" cy="2298" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2298" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2349" width="450" height="114" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2375" class="heading" text-anchor="start">CC1101</text>
+<text x="275" y="2413" class="pin" text-anchor="end">GPIO40</text>
+<path d="M300 2407 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2413" class="pin" text-anchor="start">CS</text>
+<circle cx="300" cy="2407" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2407" r="4" fill="#6f55a5"/>
+<text x="275" y="2444" class="pin" text-anchor="end">GPIO1</text>
+<path d="M300 2438 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2444" class="pin" text-anchor="start">GDO0</text>
+<circle cx="300" cy="2438" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2438" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2489" width="450" height="114" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2515" class="heading" text-anchor="start">PN532</text>
+<text x="275" y="2553" class="pin" text-anchor="end">GPIO2</text>
+<path d="M300 2547 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2553" class="pin" text-anchor="start">SS / CS</text>
+<circle cx="300" cy="2547" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2547" r="4" fill="#6f55a5"/>
+<text x="275" y="2584" class="pin" text-anchor="end">GPIO42</text>
+<path d="M300 2578 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2584" class="pin" text-anchor="start">MISO</text>
+<circle cx="300" cy="2578" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2578" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2629" width="450" height="83" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2655" class="heading" text-anchor="start">GPS NEO-6M</text>
+<text x="275" y="2693" class="pin" text-anchor="end">GPIO41</text>
+<path d="M300 2687 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2693" class="pin" text-anchor="start">TX</text>
+<circle cx="300" cy="2687" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2687" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2738" width="450" height="83" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2764" class="heading" text-anchor="start">IR receiver</text>
+<text x="275" y="2802" class="pin" text-anchor="end">GPIO14</text>
+<path d="M300 2796 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2802" class="pin" text-anchor="start">OUT</text>
+<circle cx="300" cy="2796" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2796" r="4" fill="#6f55a5"/>
+<rect x="1100" y="2847" width="450" height="83" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="2873" class="heading" text-anchor="start">IR transmitter</text>
+<text x="275" y="2911" class="pin" text-anchor="end">GPIO38</text>
+<path d="M300 2905 H1100" fill="none" stroke="#6f55a5" stroke-width="2.5"/>
+<text x="1116" y="2911" class="pin" text-anchor="start">Signal</text>
+<circle cx="300" cy="2905" r="4" fill="#6f55a5"/>
+<circle cx="1100" cy="2905" r="4" fill="#6f55a5"/>
+<text x="420" y="3050" class="heading" text-anchor="start">BREADBOARD POWER RAILS · INDIVIDUAL COMPONENT POWER PINS</text>
+<rect x="420" y="3080" width="480" height="760" rx="12" fill="#f0f3ee" stroke="#afbab2"/>
+<text x="660" y="3120" class="heading" text-anchor="middle">COMMON GND RAIL</text>
+<path d="M650 3160 V3500" fill="none" stroke="#374957" stroke-width="2.5"/>
+<text x="40" y="3166" class="pin" text-anchor="start">ESP32 GND</text>
+<path d="M200 3160 H650" fill="none" stroke="#374957" stroke-width="2.5"/>
+<path d="M650 3160 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3160" r="4" fill="#374957"/>
+<rect x="1100" y="3144" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3166" class="pin" text-anchor="start">Joystick · GND</text>
+<path d="M650 3196 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3196" r="4" fill="#374957"/>
+<rect x="1100" y="3180" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3202" class="pin" text-anchor="start">TFT / touch panel · GND</text>
+<path d="M650 3232 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3232" r="4" fill="#374957"/>
+<rect x="1100" y="3216" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3238" class="pin" text-anchor="start">NRF24L01+ · GND</text>
+<path d="M650 3268 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3268" r="4" fill="#374957"/>
+<rect x="1100" y="3252" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3274" class="pin" text-anchor="start">MicroSD · GND</text>
+<path d="M650 3304 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3304" r="4" fill="#374957"/>
+<rect x="1100" y="3288" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3310" class="pin" text-anchor="start">CC1101 · GND</text>
+<path d="M650 3340 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3340" r="4" fill="#374957"/>
+<rect x="1100" y="3324" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3346" class="pin" text-anchor="start">PN532 · GND</text>
+<path d="M650 3376 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3376" r="4" fill="#374957"/>
+<rect x="1100" y="3360" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3382" class="pin" text-anchor="start">GPS NEO-6M · GND</text>
+<path d="M650 3412 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3412" r="4" fill="#374957"/>
+<rect x="1100" y="3396" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3418" class="pin" text-anchor="start">IR receiver · GND</text>
+<path d="M650 3448 H1100" fill="none" stroke="#374957" stroke-width="2.5"/>
+<circle cx="650" cy="3448" r="4" fill="#374957"/>
+<rect x="1100" y="3432" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3454" class="pin" text-anchor="start">IR transmitter · GND</text>
+<text x="660" y="3570" class="heading" text-anchor="middle">3V3 RAIL</text>
+<path d="M650 3610 V3790" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<text x="40" y="3616" class="pin" text-anchor="start">ESP32 3V3</text>
+<path d="M200 3610 H650" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<path d="M650 3610 H1100" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<circle cx="650" cy="3610" r="4" fill="#c2413b"/>
+<rect x="1100" y="3594" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3616" class="pin" text-anchor="start">Joystick · VCC (+5V silkscreen)</text>
+<path d="M650 3650 H1100" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<circle cx="650" cy="3650" r="4" fill="#c2413b"/>
+<rect x="1100" y="3634" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3656" class="pin" text-anchor="start">NRF24L01+ · VCC</text>
+<path d="M650 3690 H1100" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<circle cx="650" cy="3690" r="4" fill="#c2413b"/>
+<rect x="1100" y="3674" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3696" class="pin" text-anchor="start">CC1101 · VCC</text>
+<path d="M650 3730 H1100" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<circle cx="650" cy="3730" r="4" fill="#c2413b"/>
+<rect x="1100" y="3714" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3736" class="pin" text-anchor="start">TFT ILI9341 · LED backlight</text>
+<path d="M650 3770 H1100" fill="none" stroke="#c2413b" stroke-width="2.5"/>
+<circle cx="650" cy="3770" r="4" fill="#c2413b"/>
+<rect x="1100" y="3754" width="450" height="32" rx="12" fill="#ffffff" stroke="#cfdae0"/>
+<text x="1116" y="3776" class="pin" text-anchor="start">PN532 · VCC (documented plan)</text>
+<text x="40" y="3890" class="small" text-anchor="start">TFT module VCC, SD reader, GPS and IR VCC: verify your exact breakout supply rating; not assumed to share one voltage.</text>
+<text x="40" y="3920" class="small" text-anchor="start">Touch and TFT are on the same panel PCB. The diagram labels their signal blocks separately; connect the panel common GND.</text>
+<text x="40" y="3950" class="small" text-anchor="start">Leave GPS RX, NRF24 IRQ and CC1101 GDO2 open. Touch IRQ46 is wired but polled. Touch GPIO45/46 are strapping pins.</text>
+<text x="40" y="3980" class="small" text-anchor="start">USB19/20, flash26–32 and PSRAM33–37 are reserved. RGB on GPIO48 is disabled. Battery circuit remains unverified/disconnected.</text>
+<text x="40" y="4010" class="small" text-anchor="start">Breadboard rails may be split; check continuity. Never bridge 3V3 and 5V. GPIO labels identify signals, not physical header positions.</text>
+<text x="40" y="4040" class="small" text-anchor="start">Source: BoardConfig.h + pin-map.csv. See hardware/BREADBOARD.md and docs/ASSEMBLY-MISTAKES.md.</text>
 </svg>

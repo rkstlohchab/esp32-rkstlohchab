@@ -77,3 +77,5 @@ Alternatively, build in Arduino IDE with the settings above and use Upload. If m
 - Mount a FAT32/FAT16 microSD card and test create/read/delete before relying on saved data.
 
 See the [hardware guide](../hardware/README.md) and [verification record](STATUS.md) for the distinction between a wired module and a tested feature.
+
+Before diagnosing a module, read the [recorded assembly mistakes](ASSEMBLY-MISTAKES.md). In particular, the tested PN532 requires SW1 OFF / SW2 ON for SPI.
