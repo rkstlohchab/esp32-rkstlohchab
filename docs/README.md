@@ -1,5 +1,6 @@
 # Documentation
 
+- [Final illustrated wiring image](../hardware/wiring-poster.png) · [zoomable version](../hardware/wiring-poster.svg)
 - [Current hardware schematic and connections](../hardware/README.md)
 - [Breadboard shared pins and direct ESP32 jumpers](../hardware/BREADBOARD.md)
 - [Component list](../hardware/components.csv)
@@ -14,3 +15,5 @@ To open the interactive 3D assembly, run `python3 -m http.server 8000` from the 
 `PORT.md`, `MERGE.md`, and `MARAUDER-UI-FIX.md` at the repository root are retained as historical notes, not the current wiring reference.
 
 See [assembly mistakes and fixes](../docs/ASSEMBLY-MISTAKES.md), especially the PN532 mode switches and GPS common ground.
+
+The interactive enclosure HTML is committed under `enclosure/enclosure.html`. GitHub Pages is not configured; the repository file link shows source, and the local server instructions above run the viewer.

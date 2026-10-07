@@ -117,3 +117,5 @@ printed mounts: `src/shell.py`. Rebuilding updates the STLs and viewer together.
 ## Electrical reference
 
 Use the [current hardware guide](../hardware/README.md) for electrical connections. Battery, charger and switch models are mechanical provisions; the verified build is USB powered.
+
+The [illustrated wiring guide](../hardware/wiring-poster.png) uses these component models together with the firmware pin map. See the [editable wiring SVG](../hardware/wiring-poster.svg) for a zoomable version.

@@ -1,0 +1,635 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2680" viewBox="0 0 2800 2680" role="img" aria-labelledby="title desc">
+<title id="title">Illustrated ESP32-S3 wiring: shared breadboard nets and direct component pins</title>
+<desc id="desc">One-sheet wiring guide using enclosure component models and the verified firmware GPIO map. Six shared GPIO feeds branch from labelled breadboard rows; all 21 dedicated signals connect directly to ESP32 GPIOs.</desc>
+<rect x="0" y="0" width="2800" height="2680" rx="0" fill="#edf2f3" stroke="none"/>
+<rect x="0" y="0" width="2800" height="180" rx="0" fill="#142d3d" stroke="none"/>
+<text x="55" y="65" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#fff" text-anchor="start">esp32-rkstlohchab</text>
+<text x="55" y="112" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="600" fill="#bbd7e1" text-anchor="start">FINAL WIRING GUIDE  /  ESP32-S3 N16R8</text>
+<text x="55" y="150" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#a9c7d1" text-anchor="start">Component illustrations from the enclosure design · GPIO connections checked against firmware · 08 OCT 2026</text>
+<text x="2140" y="65" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#73d4bb" text-anchor="start">SHARED → BREADBOARD</text>
+<text x="2140" y="106" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#aabaff" text-anchor="start">DEDICATED → ESP32</text>
+<text x="2140" y="147" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffc2a9" text-anchor="start">POWER → LABELLED RAILS</text>
+<rect x="35" y="210" width="1335" height="1365" rx="14" fill="#fff" stroke="#d7e0e4"/>
+<text x="65" y="255" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#128066" text-anchor="start">01</text>
+<text x="125" y="255" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" fill="#213748" text-anchor="start">Shared signals through the breadboard</text>
+<text x="65" y="293" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">One GPIO feed per row. Separate wires from that row reach the component pins.</text>
+<rect x="65" y="325" width="180" height="1205" rx="14" fill="#e8eff3" stroke="#cad8df"/>
+<g transform="translate(78.0,361.63257305773345) scale(2.209550962223806)">
+<rect x="0" y="0" width="57.15" height="27.94" rx="1.5" fill="#101317" stroke="#13212c"/>
+<rect x="1.2599999999999998" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.8000000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="6.34" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="8.879999999999999" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="11.42" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13.959999999999999" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="16.5" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="19.040000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="21.580000000000002" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="24.12" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="26.66" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="29.200000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="31.740000000000002" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="34.28" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="36.82" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="39.36" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="41.9" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="44.44" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="46.98" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="49.519999999999996" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="52.059999999999995" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="54.6" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.2599999999999998" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.8000000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="6.34" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="8.879999999999999" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="11.42" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13.959999999999999" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="16.5" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="19.040000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="21.580000000000002" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="24.12" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="26.66" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="29.200000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="31.740000000000002" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="34.28" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="36.82" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="39.36" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="41.9" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="44.44" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="46.98" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="49.519999999999996" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="52.059999999999995" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="54.6" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="38.6" y="4.97" width="17.6" height="18.0" rx="0.8" fill="#b8c2c7" stroke="#798892"/>
+<rect x="56.2" y="4.97" width="7.19" height="18" rx="0.4" fill="#242e2f" stroke="none"/>
+<path d="M57 7 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 11 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 15 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 19 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<rect x="-0.4" y="15.370000000000001" width="7.35" height="8.94" rx="1" fill="#b8c2c7" stroke="#7d888f"/>
+<rect x="-0.4" y="3.63" width="7.35" height="8.94" rx="1" fill="#b8c2c7" stroke="#7d888f"/>
+<rect x="32.25" y="6.74" width="3" height="4" rx="0.4" fill="#899396" stroke="none"/>
+<circle cx="33.75" cy="8.74" r="0.8" fill="#20282c" stroke="none" stroke-width="1"/>
+<rect x="27.15" y="6.74" width="3" height="4" rx="0.4" fill="#899396" stroke="none"/>
+<circle cx="28.65" cy="8.74" r="0.8" fill="#20282c" stroke="none" stroke-width="1"/>
+<rect x="12" y="5" width="5" height="4" rx="0.4" fill="#293238" stroke="none"/>
+</g>
+<text x="155" y="471" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#213748" text-anchor="middle">ESP32-S3</text>
+<text x="155" y="502" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="middle">N16R8</text>
+<rect x="415" y="325" width="410" height="1205" rx="14" fill="#f4f1e7" stroke="#d2cbbb"/>
+<text x="620" y="373" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#213748" text-anchor="middle">400-POINT</text>
+<text x="620" y="406" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#213748" text-anchor="middle">BREADBOARD</text>
+<text x="620" y="441" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#213748" text-anchor="middle">Six isolated five-hole strips</text>
+<text x="225" y="577" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO11</text>
+<path d="M245 570 H455" fill="none" stroke="#127c61" stroke-width="4"/>
+<circle cx="245" cy="570" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<text x="620" y="503" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#127c61" text-anchor="middle">S1  /  GPIO11</text>
+<rect x="440" y="548" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 570 H785" fill="none" stroke="#127c61" stroke-width="4"/>
+<circle cx="455.0" cy="570" r="9" fill="#fff" stroke="#127c61" stroke-width="2"/>
+<circle cx="537.5" cy="570" r="9" fill="#fff" stroke="#127c61" stroke-width="2"/>
+<circle cx="620.0" cy="570" r="9" fill="#fff" stroke="#127c61" stroke-width="2"/>
+<circle cx="702.5" cy="570" r="9" fill="#fff" stroke="#127c61" stroke-width="2"/>
+<circle cx="785.0" cy="570" r="9" fill="#fff" stroke="#127c61" stroke-width="2"/>
+<path d="M537.5 570 V518.0 H970" fill="none" stroke="#127c61" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="570" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<rect x="970" y="496.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="518.0" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<text x="985" y="525.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">MicroSD · MOSI / DI</text>
+<path d="M620.0 570 V570.0 H970" fill="none" stroke="#127c61" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="570" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<rect x="970" y="548.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="570.0" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<text x="985" y="577.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">CC1101 · MOSI</text>
+<path d="M702.5 570 V622.0 H970" fill="none" stroke="#127c61" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="702.5" cy="570" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<rect x="970" y="600.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="622.0" r="5" fill="#127c61" stroke="none" stroke-width="1"/>
+<text x="985" y="629.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">PN532 · MOSI</text>
+<text x="225" y="752" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO12</text>
+<path d="M245 745 H455" fill="none" stroke="#a57814" stroke-width="4"/>
+<circle cx="245" cy="745" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<text x="620" y="678" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#a57814" text-anchor="middle">S2  /  GPIO12</text>
+<rect x="440" y="723" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 745 H785" fill="none" stroke="#a57814" stroke-width="4"/>
+<circle cx="455.0" cy="745" r="9" fill="#fff" stroke="#a57814" stroke-width="2"/>
+<circle cx="537.5" cy="745" r="9" fill="#fff" stroke="#a57814" stroke-width="2"/>
+<circle cx="620.0" cy="745" r="9" fill="#fff" stroke="#a57814" stroke-width="2"/>
+<circle cx="702.5" cy="745" r="9" fill="#fff" stroke="#a57814" stroke-width="2"/>
+<circle cx="785.0" cy="745" r="9" fill="#fff" stroke="#a57814" stroke-width="2"/>
+<path d="M537.5 745 V693.0 H970" fill="none" stroke="#a57814" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="745" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<rect x="970" y="671.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="693.0" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<text x="985" y="700.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">MicroSD · SCK / CLK</text>
+<path d="M620.0 745 V745.0 H970" fill="none" stroke="#a57814" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="745" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<rect x="970" y="723.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="745.0" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<text x="985" y="752.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">CC1101 · SCK</text>
+<path d="M702.5 745 V797.0 H970" fill="none" stroke="#a57814" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="702.5" cy="745" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<rect x="970" y="775.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="797.0" r="5" fill="#a57814" stroke="none" stroke-width="1"/>
+<text x="985" y="804.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">PN532 · SCK</text>
+<text x="225" y="927" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO13</text>
+<path d="M245 920 H455" fill="none" stroke="#2675a6" stroke-width="4"/>
+<circle cx="245" cy="920" r="5" fill="#2675a6" stroke="none" stroke-width="1"/>
+<text x="620" y="853" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#2675a6" text-anchor="middle">S3  /  GPIO13</text>
+<rect x="440" y="898" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 920 H785" fill="none" stroke="#2675a6" stroke-width="4"/>
+<circle cx="455.0" cy="920" r="9" fill="#fff" stroke="#2675a6" stroke-width="2"/>
+<circle cx="537.5" cy="920" r="9" fill="#fff" stroke="#2675a6" stroke-width="2"/>
+<circle cx="620.0" cy="920" r="9" fill="#fff" stroke="#2675a6" stroke-width="2"/>
+<circle cx="702.5" cy="920" r="9" fill="#fff" stroke="#2675a6" stroke-width="2"/>
+<circle cx="785.0" cy="920" r="9" fill="#fff" stroke="#2675a6" stroke-width="2"/>
+<path d="M537.5 920 V894.0 H970" fill="none" stroke="#2675a6" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="920" r="5" fill="#2675a6" stroke="none" stroke-width="1"/>
+<rect x="970" y="872.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="894.0" r="5" fill="#2675a6" stroke="none" stroke-width="1"/>
+<text x="985" y="901.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">MicroSD · MISO / DO</text>
+<path d="M620.0 920 V946.0 H970" fill="none" stroke="#2675a6" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="920" r="5" fill="#2675a6" stroke="none" stroke-width="1"/>
+<rect x="970" y="924.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="946.0" r="5" fill="#2675a6" stroke="none" stroke-width="1"/>
+<text x="985" y="953.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">CC1101 · MISO</text>
+<text x="225" y="1102" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO15</text>
+<path d="M245 1095 H455" fill="none" stroke="#0c8792" stroke-width="4"/>
+<circle cx="245" cy="1095" r="5" fill="#0c8792" stroke="none" stroke-width="1"/>
+<text x="620" y="1028" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#0c8792" text-anchor="middle">S4  /  GPIO15</text>
+<rect x="440" y="1073" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 1095 H785" fill="none" stroke="#0c8792" stroke-width="4"/>
+<circle cx="455.0" cy="1095" r="9" fill="#fff" stroke="#0c8792" stroke-width="2"/>
+<circle cx="537.5" cy="1095" r="9" fill="#fff" stroke="#0c8792" stroke-width="2"/>
+<circle cx="620.0" cy="1095" r="9" fill="#fff" stroke="#0c8792" stroke-width="2"/>
+<circle cx="702.5" cy="1095" r="9" fill="#fff" stroke="#0c8792" stroke-width="2"/>
+<circle cx="785.0" cy="1095" r="9" fill="#fff" stroke="#0c8792" stroke-width="2"/>
+<path d="M537.5 1095 V1069.0 H970" fill="none" stroke="#0c8792" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="1095" r="5" fill="#0c8792" stroke="none" stroke-width="1"/>
+<rect x="970" y="1047.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1069.0" r="5" fill="#0c8792" stroke="none" stroke-width="1"/>
+<text x="985" y="1076.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">TFT · SDI / MOSI</text>
+<path d="M620.0 1095 V1121.0 H970" fill="none" stroke="#0c8792" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="1095" r="5" fill="#0c8792" stroke="none" stroke-width="1"/>
+<rect x="970" y="1099.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1121.0" r="5" fill="#0c8792" stroke="none" stroke-width="1"/>
+<text x="985" y="1128.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">Touch · T_DIN</text>
+<text x="225" y="1277" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO47</text>
+<path d="M245 1270 H455" fill="none" stroke="#c26a28" stroke-width="4"/>
+<circle cx="245" cy="1270" r="5" fill="#c26a28" stroke="none" stroke-width="1"/>
+<text x="620" y="1203" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#c26a28" text-anchor="middle">S5  /  GPIO47</text>
+<rect x="440" y="1248" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 1270 H785" fill="none" stroke="#c26a28" stroke-width="4"/>
+<circle cx="455.0" cy="1270" r="9" fill="#fff" stroke="#c26a28" stroke-width="2"/>
+<circle cx="537.5" cy="1270" r="9" fill="#fff" stroke="#c26a28" stroke-width="2"/>
+<circle cx="620.0" cy="1270" r="9" fill="#fff" stroke="#c26a28" stroke-width="2"/>
+<circle cx="702.5" cy="1270" r="9" fill="#fff" stroke="#c26a28" stroke-width="2"/>
+<circle cx="785.0" cy="1270" r="9" fill="#fff" stroke="#c26a28" stroke-width="2"/>
+<path d="M537.5 1270 V1244.0 H970" fill="none" stroke="#c26a28" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="1270" r="5" fill="#c26a28" stroke="none" stroke-width="1"/>
+<rect x="970" y="1222.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1244.0" r="5" fill="#c26a28" stroke="none" stroke-width="1"/>
+<text x="985" y="1251.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">TFT · SCK</text>
+<path d="M620.0 1270 V1296.0 H970" fill="none" stroke="#c26a28" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="1270" r="5" fill="#c26a28" stroke="none" stroke-width="1"/>
+<rect x="970" y="1274.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1296.0" r="5" fill="#c26a28" stroke="none" stroke-width="1"/>
+<text x="985" y="1303.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">Touch · T_CLK</text>
+<text x="225" y="1452" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="end">GPIO48</text>
+<path d="M245 1445 H455" fill="none" stroke="#8055a0" stroke-width="4"/>
+<circle cx="245" cy="1445" r="5" fill="#8055a0" stroke="none" stroke-width="1"/>
+<text x="620" y="1378" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#8055a0" text-anchor="middle">S6  /  GPIO48</text>
+<rect x="440" y="1423" width="360" height="44" rx="8" fill="#e6e0cd" stroke="#c7c0ac"/>
+<path d="M455 1445 H785" fill="none" stroke="#8055a0" stroke-width="4"/>
+<circle cx="455.0" cy="1445" r="9" fill="#fff" stroke="#8055a0" stroke-width="2"/>
+<circle cx="537.5" cy="1445" r="9" fill="#fff" stroke="#8055a0" stroke-width="2"/>
+<circle cx="620.0" cy="1445" r="9" fill="#fff" stroke="#8055a0" stroke-width="2"/>
+<circle cx="702.5" cy="1445" r="9" fill="#fff" stroke="#8055a0" stroke-width="2"/>
+<circle cx="785.0" cy="1445" r="9" fill="#fff" stroke="#8055a0" stroke-width="2"/>
+<path d="M537.5 1445 V1419.0 H970" fill="none" stroke="#8055a0" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="537.5" cy="1445" r="5" fill="#8055a0" stroke="none" stroke-width="1"/>
+<rect x="970" y="1397.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1419.0" r="5" fill="#8055a0" stroke="none" stroke-width="1"/>
+<text x="985" y="1426.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">TFT · SDO / MISO</text>
+<path d="M620.0 1445 V1471.0 H970" fill="none" stroke="#8055a0" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="620.0" cy="1445" r="5" fill="#8055a0" stroke="none" stroke-width="1"/>
+<rect x="970" y="1449.0" width="370" height="44" rx="7" fill="#f3f7f7" stroke="#d9e4e5"/>
+<circle cx="970" cy="1471.0" r="5" fill="#8055a0" stroke="none" stroke-width="1"/>
+<text x="985" y="1478.0" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="400" fill="#213748" text-anchor="start">Touch · T_DO</text>
+<text x="65" y="1550" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#576d79" text-anchor="start">S1–S6 are chosen row labels. Never join the six strips together.</text>
+<rect x="1400" y="210" width="1365" height="2040" rx="14" fill="#fff" stroke="#d7e0e4"/>
+<text x="1430" y="255" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#405caf" text-anchor="start">02</text>
+<text x="1490" y="255" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" fill="#213748" text-anchor="start">Dedicated signals directly to ESP32</text>
+<text x="1430" y="293" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">These 21 signal wires bypass the breadboard. Every endpoint is labelled.</text>
+<rect x="1430" y="325" width="225" height="1875" rx="14" fill="#e8eff3" stroke="#cad8df"/>
+<g transform="translate(1453.0,353.65395580898075) scale(2.5659301496792586)">
+<rect x="0" y="0" width="57.15" height="27.94" rx="1.5" fill="#101317" stroke="#13212c"/>
+<rect x="1.2599999999999998" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.8000000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="6.34" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="8.879999999999999" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="11.42" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13.959999999999999" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="16.5" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="19.040000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="21.580000000000002" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="24.12" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="26.66" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="29.200000000000003" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="31.740000000000002" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="34.28" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="36.82" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="39.36" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="41.9" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="44.44" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="46.98" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="49.519999999999996" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="52.059999999999995" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="54.6" y="0.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.2599999999999998" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.8000000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="6.34" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="8.879999999999999" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="11.42" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13.959999999999999" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="16.5" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="19.040000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="21.580000000000002" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="24.12" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="26.66" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="29.200000000000003" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="31.740000000000002" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="34.28" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="36.82" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="39.36" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="41.9" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="44.44" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="46.98" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="49.519999999999996" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="52.059999999999995" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="54.6" y="26.020000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="38.6" y="4.97" width="17.6" height="18.0" rx="0.8" fill="#b8c2c7" stroke="#798892"/>
+<rect x="56.2" y="4.97" width="7.19" height="18" rx="0.4" fill="#242e2f" stroke="none"/>
+<path d="M57 7 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 11 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 15 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<path d="M57 19 H62" fill="none" stroke="#b9a360" stroke-width="0.6"/>
+<rect x="-0.4" y="15.370000000000001" width="7.35" height="8.94" rx="1" fill="#b8c2c7" stroke="#7d888f"/>
+<rect x="-0.4" y="3.63" width="7.35" height="8.94" rx="1" fill="#b8c2c7" stroke="#7d888f"/>
+<rect x="32.25" y="6.74" width="3" height="4" rx="0.4" fill="#899396" stroke="none"/>
+<circle cx="33.75" cy="8.74" r="0.8" fill="#20282c" stroke="none" stroke-width="1"/>
+<rect x="27.15" y="6.74" width="3" height="4" rx="0.4" fill="#899396" stroke="none"/>
+<circle cx="28.65" cy="8.74" r="0.8" fill="#20282c" stroke="none" stroke-width="1"/>
+<rect x="12" y="5" width="5" height="4" rx="0.4" fill="#293238" stroke="none"/>
+</g>
+<text x="1542" y="471" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#213748" text-anchor="middle">ESP32 GPIO</text>
+<rect x="1990" y="494" width="740" height="197" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="523" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">KY-023 joystick</text>
+<text x="1633" y="566" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO4</text>
+<path d="M1655 559 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="559" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="559" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="566" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">VRX</text>
+<text x="1633" y="600" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO5</text>
+<path d="M1655 593 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="593" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="593" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="600" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">VRY</text>
+<text x="1633" y="634" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO6</text>
+<path d="M1655 627 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="627" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="627" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="634" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">SW</text>
+<g transform="translate(2464.6923076923076,540.0) scale(4.576923076923077)">
+<rect x="0" y="0" width="34.0" height="26.0" rx="1.5" fill="#111418" stroke="#13212c"/>
+<circle cx="3.0" cy="3.0" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="3.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="23.0" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="23.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="31.0" cy="3.0" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="31.0" cy="3.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="31.0" cy="23.0" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="31.0" cy="23.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="0.9500000000000001" y="7.27" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="9.81" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="12.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="14.889999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="17.43" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="10" y="4" width="18" height="18" rx="1" fill="#aeb8bc" stroke="none"/>
+<circle cx="19" cy="13" r="10.5" fill="#2b3036" stroke="#56636b" stroke-width="0.6"/>
+<circle cx="19" cy="13" r="7.5" fill="#151b21" stroke="none" stroke-width="1"/>
+</g>
+<text x="2010" y="672" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">GND → common rail · +5V-labelled VCC → 3V3</text>
+<rect x="1990" y="706" width="740" height="265" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="735" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">TPM408-2.8 · TFT + touch</text>
+<text x="1633" y="778" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO39</text>
+<path d="M1655 771 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="771" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="771" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="778" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">CS</text>
+<text x="1633" y="812" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO9</text>
+<path d="M1655 805 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="805" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="805" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="812" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">DC</text>
+<text x="1633" y="846" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO8</text>
+<path d="M1655 839 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="839" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="839" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="846" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">RESET</text>
+<text x="1633" y="880" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO45</text>
+<path d="M1655 873 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="873" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="873" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="880" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">T_CS</text>
+<text x="1633" y="914" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO46</text>
+<path d="M1655 907 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="907" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="907" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="914" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">T_IRQ</text>
+<g transform="translate(2488.139534883721,752.0) scale(2.1744186046511627)">
+<rect x="0" y="0" width="50.0" height="86.0" rx="1.5" fill="#b3121f" stroke="#13212c"/>
+<circle cx="3.0" cy="6.92" r="2.35" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="6.92" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="47.0" cy="6.92" r="2.35" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="47.0" cy="6.92" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="83.0" r="2.35" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="83.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="47.0" cy="83.0" r="2.35" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="47.0" cy="83.0" r="1.6" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="0.0" y="10.4" width="50.0" height="69.19999999999999" rx="0.8" fill="#c1c5ca" stroke="none"/>
+<rect x="3.4" y="19.1" width="43.2" height="57.6" rx="0.5" fill="#132936" stroke="none"/>
+<text x="25" y="42" font-family="Arial,Helvetica,sans-serif" font-size="4" font-weight="700" fill="#5cd1d0" text-anchor="middle">rkstlohchab</text>
+<rect x="7.84" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="10.38" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="12.92" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="15.459999999999999" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="18.0" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="20.54" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="23.080000000000002" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="25.620000000000005" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="28.160000000000004" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="30.700000000000003" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="33.24" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="35.78" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="38.32" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="40.86000000000001" y="1.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+</g>
+<text x="2010" y="952" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">Six shared signal pins appear in panel 01</text>
+<rect x="1990" y="986" width="740" height="265" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1015" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">NRF24L01+ PA/LNA</text>
+<text x="1633" y="1058" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO7</text>
+<path d="M1655 1051 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1051" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1051" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1058" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">CSN</text>
+<text x="1633" y="1092" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO16</text>
+<path d="M1655 1085 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1085" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1085" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1092" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">CE</text>
+<text x="1633" y="1126" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO17</text>
+<path d="M1655 1119 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1119" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1119" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1126" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">SCK</text>
+<text x="1633" y="1160" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO18</text>
+<path d="M1655 1153 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1153" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1153" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1160" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">MOSI</text>
+<text x="1633" y="1194" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO21</text>
+<path d="M1655 1187 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1187" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1187" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1194" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">MISO</text>
+<g transform="translate(2390.0,1081.726851851852) scale(5.648148148148148)">
+<rect x="0" y="0" width="41.0" height="15.5" rx="1.5" fill="#15181c" stroke="#13212c"/>
+<circle cx="38.6" cy="1.5" r="1.4" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="38.6" cy="1.5" r="0.9" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="38.6" cy="14.0" r="1.4" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="38.6" cy="14.0" r="0.9" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="1.25" y="10.91" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.25" y="8.37" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.25" y="5.83" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.25" y="3.29" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.7900000000000005" y="10.91" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.7900000000000005" y="8.37" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.7900000000000005" y="5.83" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.7900000000000005" y="3.29" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13" y="4.5" width="6" height="6" rx="0.4" fill="#292f35" stroke="#6f797f"/>
+<rect x="35.0" y="4.65" width="10" height="6.2" rx="0.4" fill="#d5ae55" stroke="#99792f"/>
+<rect x="45.0" y="5.25" width="5" height="5" rx="0.3" fill="#c59c41" stroke="none"/>
+</g>
+<text x="2010" y="1232" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">VCC → 3V3 · GND → rail · IRQ open</text>
+<rect x="1990" y="1266" width="740" height="129" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1295" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">Separate microSD reader</text>
+<text x="1633" y="1338" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO10</text>
+<path d="M1655 1331 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1331" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1331" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1338" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">CS</text>
+<g transform="translate(2497.875,1312.0) scale(2.125)">
+<rect x="0" y="0" width="42.0" height="24.0" rx="1.5" fill="#1d4fa8" stroke="#13212c"/>
+<circle cx="2.2" cy="2.2" r="1.6" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="2.2" cy="2.2" r="1.1" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="2.2" cy="21.8" r="1.6" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="2.2" cy="21.8" r="1.1" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="40.0" cy="2.2" r="1.6" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="40.0" cy="2.2" r="1.1" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="40.0" cy="21.8" r="1.6" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="40.0" cy="21.8" r="1.1" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="0.4" y="4.3" width="15.0" height="15.399999999999999" rx="1" fill="#b8c0c4" stroke="#7a8b94"/>
+<rect x="25" y="15.8" width="5" height="4.4" rx="0.3" fill="#232b33" stroke="none"/>
+<rect x="24.75" y="4" width="6.5" height="3.5" rx="0.3" fill="#232b33" stroke="none"/>
+<rect x="37.15" y="17.700000000000003" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="37.15" y="15.16" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="37.15" y="12.62" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="37.15" y="10.08" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="37.15" y="7.539999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="37.15" y="5.0" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+</g>
+<text x="2010" y="1376" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">Shared: MOSI11 / SCK12 / MISO13</text>
+<rect x="1990" y="1410" width="740" height="163" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1439" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">CC1101 E07-M1101D-SMA</text>
+<text x="1633" y="1482" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO40</text>
+<path d="M1655 1475 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1475" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1475" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1482" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">CSN / CS</text>
+<text x="1633" y="1516" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO1</text>
+<path d="M1655 1509 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1509" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1509" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1516" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">GDO0</text>
+<g transform="translate(2420.6666666666665,1456.0) scale(5.666666666666667)">
+<rect x="0" y="0" width="30.0" height="15.0" rx="1.5" fill="#1b3a2a" stroke="#13212c"/>
+<circle cx="20.0" cy="2.7" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="20.0" cy="2.7" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="20.0" cy="12.3" r="2.1" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="20.0" cy="12.3" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="0.9500000000000001" y="10.65" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="8.11" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="5.569999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="0.9500000000000001" y="3.0300000000000002" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.4899999999999998" y="10.65" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.4899999999999998" y="8.11" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.4899999999999998" y="5.569999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="3.4899999999999998" y="3.0300000000000002" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="9" y="4" width="7" height="7" rx="0.7" fill="#b9c2c5" stroke="#66737a"/>
+<rect x="24.0" y="4.4" width="10" height="6.2" rx="0.4" fill="#d5ae55" stroke="#99792f"/>
+<rect x="34.0" y="5.0" width="5" height="5" rx="0.3" fill="#c59c41" stroke="none"/>
+</g>
+<text x="2010" y="1554" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">Shared: MOSI11 / SCK12 / MISO13 · GDO2 open</text>
+<rect x="1990" y="1588" width="740" height="163" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1617" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">PN532 NFC V3 · SPI</text>
+<text x="1633" y="1660" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO2</text>
+<path d="M1655 1653 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1653" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1653" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1660" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">SS / CS</text>
+<text x="1633" y="1694" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO42</text>
+<path d="M1655 1687 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1687" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1687" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1694" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">MISO</text>
+<g transform="translate(2497.5804455445545,1634.0) scale(2.103960396039604)">
+<rect x="0" y="0" width="42.7" height="40.4" rx="1.5" fill="#d8262b" stroke="#13212c"/>
+<circle cx="7.4" cy="33.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="7.4" cy="33.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="35.0" cy="8.9" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="35.0" cy="8.9" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="2" y="2" width="38.7" height="36.4" rx="1.2" fill="none" stroke="#e8ad67"/>
+<rect x="3.3" y="3.3" width="36.1" height="33.8" rx="1.2" fill="none" stroke="#e8ad67"/>
+<rect x="4.6" y="4.6" width="33.5" height="31.2" rx="1.2" fill="none" stroke="#e8ad67"/>
+<rect x="22.5" y="19.2" width="6" height="6" rx="0.4" fill="#212c32" stroke="none"/>
+<rect x="14.549999999999999" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="17.09" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="19.630000000000003" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="22.17" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="24.71" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="27.25" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="29.79" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="32.330000000000005" y="33.35" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="7.5" y="5.75" width="6" height="4.5" rx="0.3" fill="#a01218" stroke="none"/>
+<rect x="8.5" y="8.3" width="1.4" height="1.5" rx="0.1" fill="white" stroke="none"/>
+<rect x="10.8" y="6.2" width="1.4" height="1.5" rx="0.1" fill="white" stroke="none"/>
+</g>
+<text x="2010" y="1732" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">Shared: MOSI11 / SCK12 · SW1 OFF / SW2 ON</text>
+<rect x="1990" y="1766" width="740" height="129" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1795" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">NEO-6M GPS</text>
+<text x="1633" y="1838" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO41</text>
+<path d="M1655 1831 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1831" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1831" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1838" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">TX</text>
+<g transform="translate(2524.0833333333335,1812.0) scale(1.4166666666666667)">
+<rect x="0" y="0" width="26.0" height="36.0" rx="1.5" fill="#1c3f8c" stroke="#13212c"/>
+<circle cx="3.0" cy="3.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="3.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="23.0" cy="3.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="23.0" cy="3.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="33.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.0" cy="33.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="23.0" cy="33.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="23.0" cy="33.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="13.0" cy="3.0" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="13.0" cy="3.0" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="6.9" y="9.5" width="12.2" height="16.0" rx="1" fill="#c1c7c9" stroke="#697d89"/>
+<text x="13" y="18" font-family="Arial,Helvetica,sans-serif" font-size="2" font-weight="700" fill="#324854" text-anchor="middle">NEO-6M</text>
+<circle cx="5.5" cy="28.5" r="3.4" fill="#bfc8c9" stroke="none" stroke-width="1"/>
+<rect x="8.54" y="32.550000000000004" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="11.08" y="32.550000000000004" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="13.62" y="32.550000000000004" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="16.16" y="32.550000000000004" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+</g>
+<text x="2010" y="1876" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">Module TX → MCU RX · GPS RX open</text>
+<rect x="1990" y="1910" width="740" height="129" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="1939" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">KY-022 IR receiver</text>
+<text x="1633" y="1982" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO14</text>
+<path d="M1655 1975 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="1975" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="1975" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="1982" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">OUT</text>
+<g transform="translate(2511.05,1956.0) scale(3.4)">
+<rect x="0" y="0" width="18.5" height="15.0" rx="1.5" fill="#111418" stroke="#13212c"/>
+<circle cx="15.8" cy="2.6" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="15.8" cy="2.6" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="15.8" cy="12.4" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="15.8" cy="12.4" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="1.25" y="4.31" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.25" y="6.85" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="1.25" y="9.389999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="9" y="4.5" width="6" height="6" rx="0.6" fill="#aebac3" stroke="#657982"/>
+<circle cx="11" cy="7.5" r="2.5" fill="#26323c" stroke="none" stroke-width="1"/>
+</g>
+<text x="2010" y="2020" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">S / OUT is the signal pin</text>
+<rect x="1990" y="2054" width="740" height="129" rx="12" fill="#f6f8fa" stroke="#dde4e8"/>
+<text x="2010" y="2083" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#213748" text-anchor="start">KY-005 IR transmitter</text>
+<text x="1633" y="2126" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="end">GPIO38</text>
+<path d="M1655 2119 H1990" fill="none" stroke="#405caf" stroke-width="3"/>
+<circle cx="1655" cy="2119" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<circle cx="1990" cy="2119" r="5" fill="#405caf" stroke="none" stroke-width="1"/>
+<text x="2010" y="2126" font-family="ui-monospace,Menlo,monospace" font-size="23" font-weight="400" fill="#213748" text-anchor="start">Signal</text>
+<g transform="translate(2511.05,2100.0) scale(3.4)">
+<rect x="0" y="0" width="18.5" height="15.0" rx="1.5" fill="#111418" stroke="#13212c"/>
+<circle cx="3.2" cy="2.6" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.2" cy="2.6" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<circle cx="3.2" cy="12.4" r="2.0" fill="#bda775" stroke="none" stroke-width="1"/>
+<circle cx="3.2" cy="12.4" r="1.5" fill="#eef2ef" stroke="none" stroke-width="1"/>
+<rect x="15.950000000000001" y="9.389999999999999" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="15.950000000000001" y="6.85" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<rect x="15.950000000000001" y="4.31" width="1.3" height="1.3" rx="0.15" fill="#e2bd66" stroke="none"/>
+<circle cx="4" cy="7.5" r="3.5" fill="#cee1e7" stroke="#9dafb6" stroke-width="0.5"/>
+</g>
+<text x="2010" y="2164" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#536b79" text-anchor="start">S is the signal pin</text>
+<rect x="35" y="1605" width="1335" height="445" rx="14" fill="#fff" stroke="#d7e0e4"/>
+<text x="65" y="1650" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#ac503d" text-anchor="start">03</text>
+<text x="125" y="1650" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" fill="#213748" text-anchor="start">Breadboard power rails</text>
+<text x="65" y="1690" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">Common GND for every fitted module. Keep the 3V3 and 5V rails separate.</text>
+<text x="65" y="1758" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="start">ESP32 GND</text>
+<path d="M230 1750 H395" fill="none" stroke="#394e5b" stroke-width="4"/>
+<rect x="395" y="1725" width="320" height="50" rx="8" fill="#f4f1e7" stroke="#d2cbbb"/>
+<path d="M410 1750 H695" fill="none" stroke="#394e5b" stroke-width="4"/>
+<circle cx="410" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="450" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="490" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="530" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="570" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="610" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="650" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<circle cx="690" cy="1750" r="4" fill="#fff" stroke="#394e5b" stroke-width="1.5"/>
+<path d="M695 1750 H755" fill="none" stroke="#394e5b" stroke-width="4"/>
+<text x="65" y="1848" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="400" fill="#213748" text-anchor="start">ESP32 3V3</text>
+<path d="M230 1840 H395" fill="none" stroke="#be4d39" stroke-width="4"/>
+<rect x="395" y="1815" width="320" height="50" rx="8" fill="#f4f1e7" stroke="#d2cbbb"/>
+<path d="M410 1840 H695" fill="none" stroke="#be4d39" stroke-width="4"/>
+<circle cx="410" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="450" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="490" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="530" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="570" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="610" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="650" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<circle cx="690" cy="1840" r="4" fill="#fff" stroke="#be4d39" stroke-width="1.5"/>
+<path d="M695 1840 H755" fill="none" stroke="#be4d39" stroke-width="4"/>
+<text x="775" y="1758" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" fill="#213748" text-anchor="start">GND of all nine module PCBs</text>
+<text x="775" y="1824" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">Joystick / NRF24 / CC1101 VCC</text>
+<text x="775" y="1854" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">TFT LED / PN532 VCC (documented plan)</text>
+<text x="65" y="1912" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#213748" text-anchor="start">TFT VCC, SD, GPS and IR VCC depend on the exact breakout supply rating.</text>
+<text x="65" y="1948" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#213748" text-anchor="start">Check those inputs before wiring. All ESP32-facing signals must be 3.3 V compatible.</text>
+<text x="65" y="1991" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#795346" text-anchor="start">Battery / TP4056 power path is unverified. The tested build uses USB power.</text>
+<rect x="35" y="2280" width="2730" height="350" rx="14" fill="#142d3d" stroke="none"/>
+<text x="65" y="2328" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="start">PIN AND ASSEMBLY NOTES</text>
+<text x="65" y="2370" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#d6eef1" text-anchor="start">Use the pin labels, not these drawing positions.</text>
+<text x="975" y="2370" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#bad0d9" text-anchor="start">Illustrations follow enclosure shapes and colors; wiring ports are arranged for readability.</text>
+<text x="65" y="2415" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#d6eef1" text-anchor="start">TFT + XPT2046 are one PCB.</text>
+<text x="975" y="2415" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#bad0d9" text-anchor="start">The signal blocks share the panel GND. Its optional full-size SD socket is not the separate reader.</text>
+<text x="65" y="2460" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#d6eef1" text-anchor="start">PN532 SPI: switch 1 OFF, switch 2 ON.</text>
+<text x="975" y="2460" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#bad0d9" text-anchor="start">Our OFF/OFF mistake selected UART and caused failed SPI probes. MISO is dedicated GPIO42.</text>
+<text x="65" y="2505" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#d6eef1" text-anchor="start">Reserve USB19/20 and flash/PSRAM26–37.</text>
+<text x="975" y="2505" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#bad0d9" text-anchor="start">GPIO48 RGB is disabled. Touch45/46 are strapping pins. NRF24 #2 is absent; IR14/38 stay dedicated.</text>
+<text x="65" y="2550" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#d6eef1" text-anchor="start">Open pins: GPS RX, NRF24 IRQ, CC1101 GDO2.</text>
+<text x="975" y="2550" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="400" fill="#bad0d9" text-anchor="start">GPS TX goes to GPIO41; reconnecting common GND fixed our NMEA communication problem.</text>
+<text x="65" y="2603" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#8fb4c3" text-anchor="start">Sources: hardware/pin-map.csv + ESP32-DIV/BoardConfig.h + enclosure/src/parts.py · rkstlohchab</text>
+</svg>

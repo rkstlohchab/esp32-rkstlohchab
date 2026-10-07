@@ -8,7 +8,7 @@ This repository contains the current firmware, the wiring used by this build, an
 
 | I want to… | Open |
 |---|---|
-| See the wiring / final connection schematic | [Hardware guide](hardware/README.md) · [pin diagram](hardware/wiring.svg) |
+| See the wiring / final connection schematic | [Hardware guide](hardware/README.md) · [illustrated PNG](hardware/wiring-poster.png) · [zoomable SVG](hardware/wiring-poster.svg) |
 | Split shared pins on a breadboard / wire direct jumpers | [Breadboard and direct wiring](hardware/BREADBOARD.md) |
 | Get the component list | [Bill of materials](hardware/components.csv) |
 | Look up a GPIO | [Pin map CSV](hardware/pin-map.csv) |
@@ -21,7 +21,9 @@ This repository contains the current firmware, the wiring used by this build, an
 | Find the source | [Arduino sketch](ESP32-DIV/ESP32-DIV.ino) · [board pin configuration](ESP32-DIV/BoardConfig.h) |
 | Apply the required display patches | [TFT_eSPI patch](tft_espi-patch/README.md) |
 
-![Current wiring and pin diagram](hardware/wiring.svg)
+![Illustrated wiring guide: shared breadboard nets and direct ESP32 pins](hardware/wiring-poster.png)
+
+[Download full-resolution PNG](hardware/wiring-poster.png) · [Zoomable SVG](hardware/wiring-poster.svg) · [Detailed connection schematic](hardware/wiring.svg)
 
 ## Use the device
 

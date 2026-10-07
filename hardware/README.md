@@ -2,14 +2,15 @@
 
 Snapshot: **2026-10-08**. Electrical pin assignments come from [`ESP32-DIV/BoardConfig.h`](../ESP32-DIV/BoardConfig.h), checked against the configured display patch and the latest local bring-up notes. This is the final documented **module connection schematic for the current bench configuration**, not a new custom PCB design.
 
-- [Connection schematic / pin diagram](wiring.svg)
+- [Illustrated wiring image (PNG)](wiring-poster.png) · [zoomable SVG](wiring-poster.svg)
+- [Detailed connection schematic](wiring.svg)
 - [Breadboard shared rows and direct jumpers](BREADBOARD.md)
 - [Machine-readable pin map](pin-map.csv)
 - [Component list / bill of materials](components.csv)
 - [3D enclosure and assembly](../enclosure/README.md)
 - [Verification record](../docs/STATUS.md)
 
-![Wiring](wiring.svg)
+![Illustrated wiring guide](wiring-poster.png)
 
 ## Signal connections
 
@@ -77,3 +78,17 @@ python3 hardware/generate_wiring.py
 The generator reads `pin-map.csv`, checks every GPIO against the board configuration, and writes `wiring.svg`. Update the firmware configuration and CSV together when wiring changes.
 
 See [assembly mistakes and fixes](../docs/ASSEMBLY-MISTAKES.md), especially the PN532 mode switches and GPS common ground.
+
+## Illustrated image and component models
+
+The [final PNG](wiring-poster.png) combines component illustrations derived from `enclosure/src/parts.py` with the verified CSV connections. Its left panel shows six ESP32 feeds into six breadboard strips and individual component branches. Its right panel shows all 21 dedicated signal connections. They describe the same ESP32 and modules, separated into two panels for readable wire paths.
+
+Module illustrations identify the parts and their proportions. Wires terminate at labelled schematic ports; follow your actual PCB silkscreen rather than treating illustration positions as a header locator. TFT and touch share one physical PCB. Power inputs whose breakout supply rating has not been established are explicitly marked for verification.
+
+Regenerate both formats (PNG export requires Chrome/Chromium):
+
+```sh
+python3 hardware/generate_wiring_poster.py --png
+```
+
+Omit `--png` to regenerate the editable SVG without a browser.
