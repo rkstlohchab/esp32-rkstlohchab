@@ -1,0 +1,4 @@
+2a5a3ec259fccc93c8977db1ec5afc1dfc3e4b7bd3b31eee2c59e7f2af8c2771  ESP32-DIV.ino.bin
+d0b02b860147ace6a607985a3123a977b9451fa5d54a24ca6db59be4a2e4c345  ESP32-DIV.ino.bootloader.bin
+ace02503447d0f470692e65fa76002f2d77a92dc81cd3813d8aa66718d716da9  ESP32-DIV.ino.partitions.bin
+f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0  boot_app0.bin

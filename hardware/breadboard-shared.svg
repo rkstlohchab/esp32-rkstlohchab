@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-label="Six isolated breadboard signal rows for shared GPIOs">
+<style>text{font-family:Arial,sans-serif;fill:#213444;font-size:16px}.h{font-size:26px;font-weight:700}.s{font-size:14px;fill:#536978}</style>
+<rect width="1200" height="650" fill="#f5f8fa"/>
+<text x="35" y="48" class="h">Shared pins → isolated breadboard rows</text>
+<text x="35" y="78" class="s">One ESP32 wire + module taps on each row. S1–S6 are suggested labels. These six rows must remain isolated.</text>
+<text x="35" y="131">ESP32 GPIO11</text>
+<path d="M175 125 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="105" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="131" class="s">S1</text>
+<path d="M290 125 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="125" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="125" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="125" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="125" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="125" r="7" fill="white" stroke="#688595"/>
+<path d="M550 125 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="131" style="font-size:14px">MicroSD MOSI / DI + CC1101 MOSI + PN532 MOSI</text>
+<text x="35" y="203">ESP32 GPIO12</text>
+<path d="M175 197 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="177" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="203" class="s">S2</text>
+<path d="M290 197 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="197" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="197" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="197" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="197" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="197" r="7" fill="white" stroke="#688595"/>
+<path d="M550 197 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="203" style="font-size:14px">MicroSD SCK / CLK + CC1101 SCK + PN532 SCK</text>
+<text x="35" y="275">ESP32 GPIO13</text>
+<path d="M175 269 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="249" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="275" class="s">S3</text>
+<path d="M290 269 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="269" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="269" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="269" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="269" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="269" r="7" fill="white" stroke="#688595"/>
+<path d="M550 269 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="275" style="font-size:14px">MicroSD MISO / DO + CC1101 MISO</text>
+<text x="35" y="347">ESP32 GPIO15</text>
+<path d="M175 341 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="321" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="347" class="s">S4</text>
+<path d="M290 341 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="341" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="341" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="341" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="341" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="341" r="7" fill="white" stroke="#688595"/>
+<path d="M550 341 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="347" style="font-size:14px">TFT ILI9341 SDI / MOSI + Touch XPT2046 T_DIN</text>
+<text x="35" y="419">ESP32 GPIO47</text>
+<path d="M175 413 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="393" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="419" class="s">S5</text>
+<path d="M290 413 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="413" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="413" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="413" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="413" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="413" r="7" fill="white" stroke="#688595"/>
+<path d="M550 413 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="419" style="font-size:14px">TFT ILI9341 SCK + Touch XPT2046 T_CLK</text>
+<text x="35" y="491">ESP32 GPIO48</text>
+<path d="M175 485 H270" stroke="#087e8b" stroke-width="3"/>
+<rect x="270" y="465" width="280" height="40" rx="10" fill="#dce9ee" stroke="#afc2cb"/>
+<text x="228" y="491" class="s">S6</text>
+<path d="M290 485 H530" stroke="#688595" stroke-width="3"/>
+<circle cx="290" cy="485" r="7" fill="white" stroke="#688595"/>
+<circle cx="350" cy="485" r="7" fill="white" stroke="#688595"/>
+<circle cx="410" cy="485" r="7" fill="white" stroke="#688595"/>
+<circle cx="470" cy="485" r="7" fill="white" stroke="#688595"/>
+<circle cx="530" cy="485" r="7" fill="white" stroke="#688595"/>
+<path d="M550 485 H580" stroke="#087e8b" stroke-width="3"/>
+<text x="595" y="491" style="font-size:14px">TFT ILI9341 SDO / MISO + Touch XPT2046 T_DO</text>
+<text x="35" y="590" class="s">Common GND and correctly rated power rails are separate from these signal rows.</text>
+<text x="35" y="618" class="s">PN532 MISO42 and NRF24 SCK17/MOSI18/MISO21 are dedicated signals: do not join them to these shared nets.</text>
+</svg>

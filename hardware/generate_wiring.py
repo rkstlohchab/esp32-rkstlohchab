@@ -1,0 +1,103 @@
+"""Validate pin-map.csv against firmware and render the module connection diagram."""
+from pathlib import Path
+import csv
+import html
+import re
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+
+
+def defines(path):
+    return dict(re.findall(r'^\s*#define\s+(\w+)\s+([\w-]+)', path.read_text(), re.M))
+
+
+def main():
+    macros = defines(ROOT / 'ESP32-DIV/BoardConfig.h')
+    def resolve(name):
+        visited = set()
+        while not name.lstrip('-').isdigit():
+            if name in visited or name not in macros:
+                raise ValueError('Unknown or circular macro: ' + name)
+            visited.add(name)
+            name = macros[name]
+        return int(name)
+
+    with (HERE / 'pin-map.csv').open(newline='') as f:
+        rows = list(csv.DictReader(f))
+    for row in rows:
+        assert resolve(row['firmware_macro']) == int(row['esp32_gpio']), row
+    display_macros = defines(ROOT / 'tft_espi-patch/User_Setup.h')
+    for patch, board in [('TFT_MOSI','TFT_MOSI_PIN'), ('TFT_MISO','TFT_MISO_PIN'),
+                         ('TFT_SCLK','TFT_SCLK_PIN'), ('TFT_CS','TFT_CS_PIN'),
+                         ('TFT_DC','TFT_DC_PIN'), ('TFT_RST','TFT_RST_PIN'),
+                         ('TOUCH_CS','XPT2046_CS')]:
+        assert int(display_macros[patch]) == resolve(board), patch
+
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1510" viewBox="0 0 1400 1510" role="img" aria-labelledby="title desc">',
+           '<title id="title">esp32-rkstlohchab current module wiring</title>',
+           '<desc id="desc">GPIO connections for the ESP32-S3 N16R8 bench build, with shared nets repeated by module. Power constraints are listed separately.</desc>',
+           '<style>text{font-family:Arial,sans-serif;fill:#213444}.title{font-size:32px;font-weight:700}.heading{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}.pin{font-size:16px;font-family:monospace}.muted{fill:#536978}</style>',
+           '<rect width="1400" height="1510" fill="#f5f8fa"/>']
+    def text(x,y,s,cls='body',anchor='start'):
+        out.append(f'<text x="{x}" y="{y}" class="{cls}" text-anchor="{anchor}">{html.escape(s)}</text>')
+    def rect(x,y,w,h,fill,stroke='#cfdae0'):
+        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="{fill}" stroke="{stroke}"/>')
+    text(48,55,'esp32-rkstlohchab', 'title')
+    text(48,85,'Module connection schematic · ESP32-S3 N16R8 · current configuration · 2026-10-08','body')
+    text(48,112,'GPIO labels are logical signals, not DevKit header positions. Repeated GPIOs are the same shared net.','small')
+    rect(505,145,390,1035,'#e7f0f5','#8ba4b4')
+    text(700,180,'ESP32-S3 N16R8','heading','middle')
+    text(700,205,'16 MB flash · 8 MB OPI PSRAM','small','middle')
+    groups = [
+        ('TFT ILI9341', 'TPM408-2.8 display', 'left', 245, '#087e8b'),
+        ('Touch XPT2046', 'Touch shares display SPI', 'left', 495, '#087e8b'),
+        ('Joystick', 'KY-023 · active-low click', 'left', 725, '#9b6500'),
+        ('NRF24L01+', 'One PA/LNA radio; IRQ open', 'left', 910, '#6f55a5'),
+        ('MicroSD', 'Separate SPI reader', 'right', 245, '#287d48'),
+        ('CC1101', 'GDO2 remains unconnected', 'right', 465, '#287d48'),
+        ('PN532', 'SPI · SW1 OFF / SW2 ON', 'right', 695, '#bc5c22'),
+        ('GPS NEO-6M', '9600 baud · module RX open', 'right', 895, '#2968aa'),
+        ('IR receiver', 'KY-022 · test pending', 'right', 1020, '#96526d'),
+        ('IR transmitter', 'KY-005 · test pending', 'right', 1130, '#96526d'),
+    ]
+    for module, subtitle, side, y, color in groups:
+        pins = [row for row in rows if row['module'] == module]
+        x = 40 if side == 'left' else 1050
+        rect(x,y-36,310,78+len(pins)*25,'#ffffff')
+        text(x+16,y-10,module,'heading')
+        text(x+16,y+13,subtitle,'small')
+        for i,row in enumerate(pins):
+            py=y+43+i*25
+            gpio=row['esp32_gpio']
+            if side == 'left':
+                text(x+16,py,row['module_pin'],'pin')
+                out.append(f'<path d="M350 {py-5} H505" stroke="{color}" stroke-width="2" fill="none"/>')
+                text(521,py,'GPIO'+gpio,'pin')
+                ends=(350,505)
+            else:
+                text(x+16,py,row['module_pin'],'pin')
+                out.append(f'<path d="M895 {py-5} H1050" stroke="{color}" stroke-width="2" fill="none"/>')
+                text(878,py,'GPIO'+gpio,'pin','end')
+                ends=(895,1050)
+            for px in ends:
+                out.append(f'<circle cx="{px}" cy="{py-5}" r="3" fill="{color}"/>')
+    text(700,1100,'Reserved: USB GPIO19/20','small','middle')
+    text(700,1125,'Flash 26–32 · PSRAM 33–37','small','middle')
+    text(700,1150,'RGB LED disabled on GPIO48','small','middle')
+    rect(40,1250,1320,215,'#ffffff')
+    text(60,1282,'POWER AND UNCONNECTED SIGNALS','heading')
+    for y,s in [(1310,'USB powers the tested build. All module grounds connect to common GND through the breadboard rails.'),
+                (1338,'3V3: joystick, NRF24, CC1101, TFT backlight; PN532 supply follows the documented 3V3 plan. Add 10–47 µF near NRF24.'),
+                (1366,'TFT VCC / SD / GPS / IR supply: confirm the exact breakout rating; MCU signal levels must be 3.3 V compatible.'),
+                (1394,'Leave GPS RX, NRF24 IRQ, and CC1101 GDO2 open. Touch IRQ46 is wired but polled. GPIO45/46 are strapping pins.'),
+                (1422,'Battery / TP4056 / switch are mechanical provisions only; no verified regulated battery power schematic is included.'),
+                (1450,'Sources: ESP32-DIV/BoardConfig.h · tft_espi-patch/User_Setup.h · hardware/pin-map.csv. See hardware/README.md.')]:
+        text(60,y,s,'small')
+    out.append('</svg>')
+    (HERE / 'wiring.svg').write_text('\n'.join(out)+'\n')
+    print(f'Validated {len(rows)} signal connections and 7 display patch pins; wrote hardware/wiring.svg')
+
+
+if __name__ == '__main__':
+    main()

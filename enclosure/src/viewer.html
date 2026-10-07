@@ -1,0 +1,178 @@
+<title>Handheld Enclosure Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E9EDEB; --stage-hi:#F7F9F8; --panel:#FFFFFF; --panel-2:#F3F6F5; --rule:#D3DBD8; --rule-2:#B9C4C0;
+  --ink:#16201D; --muted:#55635E; --faint:#7D8A86;
+  --accent:#0B8577; --accent-ink:#FFFFFF; --dim:#B25E0A; --sel:#D2365A; --ok:#1D7A46; --warn:#9A5B00;
+  --shell:#9DB3AE; --shell-edge:#4F6A64;
+  --f-d:"Archivo","Arial Narrow",system-ui,sans-serif; --f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0C1112; --stage-hi:#18211F; --panel:#131A1B; --panel-2:#0F1516; --rule:#243030; --rule-2:#33423F;
+    --ink:#E3EAE7; --muted:#97A6A1; --faint:#6C7B77;
+    --accent:#3CC8B4; --accent-ink:#04211C; --dim:#F0A640; --sel:#FF6B8A; --ok:#6DD39B; --warn:#F1B45C;
+    --shell:#7F9994; --shell-edge:#A9C2BC;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0C1112; --stage-hi:#18211F; --panel:#131A1B; --panel-2:#0F1516; --rule:#243030; --rule-2:#33423F;
+  --ink:#E3EAE7; --muted:#97A6A1; --faint:#6C7B77;
+  --accent:#3CC8B4; --accent-ink:#04211C; --dim:#F0A640; --sel:#FF6B8A; --ok:#6DD39B; --warn:#F1B45C;
+  --shell:#7F9994; --shell-edge:#A9C2BC;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-b);font-size:14px;line-height:1.45;overflow:hidden;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-rows:auto minmax(0,1fr);height:100%}
+header{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--rule)}
+.brand{display:flex;flex-direction:column;line-height:1.1;margin-right:6px}
+.brand b{font-family:var(--f-d);font-weight:800;font-stretch:80%;font-size:19px;letter-spacing:-.005em}
+.brand span{font-family:var(--f-m);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg{display:inline-flex;background:var(--panel-2);border:1px solid var(--rule);border-radius:8px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;color:var(--muted);padding:5px 10px;border-radius:5px;font-weight:600;font-size:12.5px;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.tgl{border:1px solid var(--rule);background:var(--panel-2);color:var(--muted);padding:5px 9px;border-radius:6px;font-size:12px;font-weight:500;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.tgl::before{content:"";width:8px;height:8px;border-radius:2px;border:1.5px solid currentColor;opacity:.7}
+.tgl[aria-pressed="true"]{color:var(--ink);border-color:var(--accent)}
+.tgl[aria-pressed="true"]::before{background:var(--accent);border-color:var(--accent);opacity:1}
+.tgl.plain::before{display:none}
+
+.stage{position:relative;min-width:0;min-height:0;background:radial-gradient(120% 85% at 50% 8%,var(--stage-hi) 0%,var(--ground) 72%)}
+canvas#c{display:block;width:100%;height:100%;touch-action:none}
+.hud{position:absolute;left:12px;right:12px;bottom:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;justify-content:space-between;pointer-events:none}
+.hud>*{pointer-events:auto}
+.views{display:flex;flex-wrap:wrap;gap:4px;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--rule);border-radius:8px;padding:4px}
+.views button{border:0;background:transparent;color:var(--muted);font-size:11.5px;font-weight:600;padding:4px 8px;border-radius:5px}
+.views button:hover{background:var(--panel-2);color:var(--ink)}
+.cut{display:flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--rule);border-radius:8px;padding:5px 10px;font-size:11.5px;color:var(--muted)}
+.cut input{width:140px;accent-color:var(--accent)}
+.cut output{font-family:var(--f-m);color:var(--ink);min-width:6ch;font-variant-numeric:tabular-nums}
+.readout{position:absolute;top:10px;left:12px;font-family:var(--f-m);font-size:12px;color:var(--muted);background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--rule);border-radius:999px;padding:4px 11px;font-variant-numeric:tabular-nums}
+.readout b{color:var(--dim);font-weight:600}
+.hint{position:absolute;top:10px;right:12px;font-size:11px;color:var(--faint)}
+
+aside{grid-row:2;grid-column:2;display:flex;flex-direction:column;min-height:0;background:var(--panel);border-left:1px solid var(--rule)}
+.tabs{display:flex;border-bottom:1px solid var(--rule);padding:0 8px}
+.tabs button{flex:1;border:0;background:transparent;color:var(--muted);padding:10px 4px 9px;font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.pane{flex:1;min-height:0;overflow-y:auto;padding:14px 16px 24px}
+.pane[hidden]{display:none}
+h2{font-family:var(--f-d);font-stretch:85%;font-weight:700;font-size:20px;margin:0;line-height:1.15;text-wrap:balance}
+h3{font-family:var(--f-d);font-stretch:90%;font-weight:700;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+p{margin:0 0 8px}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 12px}
+.chip{font-size:11px;font-weight:600;letter-spacing:.02em;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-2);color:var(--muted);white-space:nowrap}
+.chip.drawing{color:var(--ok);border-color:currentColor}
+.chip.est{color:var(--warn);border-color:currentColor}
+.chip.wire{color:var(--accent);border-color:currentColor}
+.dims{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 12px}
+.dims div{background:var(--panel-2);border:1px solid var(--rule);border-radius:6px;padding:6px 4px;text-align:center}
+.dims b{display:block;font-family:var(--f-m);font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.dims span{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th{text-align:left;font-weight:600;color:var(--faint);font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;padding:5px 6px;border-bottom:1px solid var(--rule-2)}
+td{padding:5px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{font-family:var(--f-m);font-variant-numeric:tabular-nums;white-space:nowrap}
+.swatch{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0;border:1px solid var(--rule-2)}
+.plist{display:flex;flex-direction:column;gap:1px}
+.prow{display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;width:100%;text-align:left;border:1px solid transparent;background:transparent;padding:6px 7px;border-radius:6px}
+.prow:hover{background:var(--panel-2)}
+.prow[aria-pressed="true"]{border-color:var(--rule-2);background:var(--panel-2)}
+.prow .nm{font-size:12.5px;font-weight:500}
+.prow .nm small{display:block;color:var(--faint);font-size:11px;font-weight:400}
+.prow .mm{font-family:var(--f-m);font-size:11px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.grp{font-family:var(--f-m);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin:12px 2px 3px}
+.draw{border:1px solid var(--rule);border-radius:8px;background:var(--panel-2);margin:0 0 12px;overflow-x:auto}
+.draw figcaption{font-size:11.5px;color:var(--muted);padding:6px 10px 0;display:flex;justify-content:space-between;gap:8px}
+.draw figcaption b{color:var(--ink);font-weight:600}
+.draw svg{display:block;width:100%;height:auto;min-width:300px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:13px;padding:8px 13px;border-radius:7px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:default}
+.status{font-size:12px;color:var(--muted);margin-top:6px;min-height:1.4em}
+ol,ul{margin:0 0 8px;padding-left:18px}
+li{margin:0 0 4px}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 10px;margin:8px 0;font-size:12.5px;color:var(--muted)}
+.note.warn{border-left-color:var(--dim)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12.5px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-family:var(--f-m);font-variant-numeric:tabular-nums}
+.foot{font-size:11px;color:var(--faint);margin-top:14px}
+@media (max-width:900px){
+  body{overflow:auto}
+  .app{grid-template-columns:1fr;grid-template-rows:auto 62vh auto;height:auto;min-height:100%}
+  aside{grid-row:3;grid-column:1;border-left:0;border-top:1px solid var(--rule)}
+  .pane{overflow:visible}
+  .tools{margin-left:0}
+  .hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="app">
+  <header>
+    <div class="brand"><b>Enclosure Studio</b><span id="sub">ESP32-S3 handheld · portrait</span></div>
+    <div class="seg" role="group" aria-label="Arrangement">
+      <button id="mAsm" aria-pressed="true">Assembled</button>
+      <button id="mExp" aria-pressed="false">Exploded</button>
+      <button id="mParts" aria-pressed="false">Parts only</button>
+      <button id="mShell" aria-pressed="false">Case only</button>
+    </div>
+    <div class="tools">
+      <button class="tgl" id="tOrtho" aria-pressed="false" title="No perspective: parts at any depth show at their real relative size">True scale</button>
+      <button class="tgl" id="tGhost" aria-pressed="true">See-through case</button>
+      <button class="tgl" id="tDims" aria-pressed="true">Dimensions</button>
+      <button class="tgl" id="tKeep" aria-pressed="false">Wire zones</button>
+      <button class="tgl" id="tAnt" aria-pressed="true">Antennas</button>
+      <button class="tgl" id="tLabels" aria-pressed="false">Labels</button>
+    </div>
+  </header>
+
+  <div class="stage">
+    <canvas id="c" aria-label="3D model of the enclosure and its components"></canvas>
+    <div class="readout" id="readout">Outer <b id="outer">—</b></div>
+    <div class="hint">drag rotate · scroll zoom · right-drag pan · click a part · Front/Back/Top… are true scale</div>
+    <div class="hud">
+      <div class="views" role="group" aria-label="Camera">
+        <button data-view="iso">3/4</button><button data-view="front">Front</button><button data-view="back">Back</button>
+        <button data-view="top">Top</button><button data-view="bottom">Bottom</button><button data-view="right">Right</button><button data-view="left">Left</button>
+      </div>
+      <label class="cut" for="cutX">Section cut
+        <input id="cutX" type="range" min="0" max="100" value="100" step="0.5">
+        <output id="cutOut">off</output>
+      </label>
+    </div>
+  </div>
+
+  <aside>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tabPart" aria-selected="true" aria-controls="pPart">Part</button>
+      <button role="tab" id="tabDraw" aria-selected="false" aria-controls="pDraw">Drawings</button>
+      <button role="tab" id="tabPrint" aria-selected="false" aria-controls="pPrint">Print</button>
+      <button role="tab" id="tabList" aria-selected="false" aria-controls="pList">Parts</button>
+    </div>
+    <section class="pane" id="pPart" role="tabpanel" aria-labelledby="tabPart"></section>
+    <section class="pane" id="pDraw" role="tabpanel" aria-labelledby="tabDraw" hidden></section>
+    <section class="pane" id="pPrint" role="tabpanel" aria-labelledby="tabPrint" hidden></section>
+    <section class="pane" id="pList" role="tabpanel" aria-labelledby="tabList" hidden></section>
+  </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/*__ENCLOSURE_DATA__*/
+/*__JS__*/
+</script>

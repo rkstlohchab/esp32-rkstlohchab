@@ -1,0 +1,36 @@
+module,module_pin,esp32_gpio,firmware_macro,notes,status,connection_route
+Joystick,VRX,4,JOY_X_PIN,ADC1,Verified,Dedicated signal: direct ESP32 jumper
+Joystick,VRY,5,JOY_Y_PIN,ADC1,Verified,Dedicated signal: direct ESP32 jumper
+Joystick,SW,6,JOY_SW_PIN,Active-low; internal pull-up,Verified,Dedicated signal: direct ESP32 jumper
+TFT ILI9341,SDI / MOSI,15,TFT_MOSI_PIN,Display SPI,Verified,Shared breadboard signal row: GPIO15
+TFT ILI9341,SCK,47,TFT_SCLK_PIN,Display SPI,Verified,Shared breadboard signal row: GPIO47
+TFT ILI9341,SDO / MISO,48,TFT_MISO_PIN,Display SPI; onboard RGB disabled,Verified,Shared breadboard signal row: GPIO48
+TFT ILI9341,CS,39,TFT_CS_PIN,Display select,Verified,Dedicated signal: direct ESP32 jumper
+TFT ILI9341,DC,9,TFT_DC_PIN,Display data / command,Verified,Dedicated signal: direct ESP32 jumper
+TFT ILI9341,RESET,8,TFT_RST_PIN,Display reset,Verified,Dedicated signal: direct ESP32 jumper
+Touch XPT2046,T_DIN,15,XPT2046_MOSI,Shares TFT MOSI,Verified,Shared breadboard signal row: GPIO15
+Touch XPT2046,T_CLK,47,XPT2046_CLK,Shares TFT SCK,Verified,Shared breadboard signal row: GPIO47
+Touch XPT2046,T_DO,48,XPT2046_MISO,Shares TFT MISO,Verified,Shared breadboard signal row: GPIO48
+Touch XPT2046,T_CS,45,XPT2046_CS,Boot strapping pin; preserve reset levels,Verified,Dedicated signal: direct ESP32 jumper
+Touch XPT2046,T_IRQ,46,XPT2046_IRQ,Wired; touch is polled; boot strapping pin,Verified,Dedicated signal: direct ESP32 jumper
+NRF24L01+,CSN,7,CSN_PIN_1,Radio SPI,SPI verified,Dedicated signal: direct ESP32 jumper
+NRF24L01+,CE,16,CE_PIN_1,Radio enable,SPI verified,Dedicated signal: direct ESP32 jumper
+NRF24L01+,SCK,17,NRF24_SPI_SCK,Radio SPI,SPI verified,Dedicated signal: direct ESP32 jumper
+NRF24L01+,MOSI,18,NRF24_SPI_MOSI,Radio SPI,SPI verified,Dedicated signal: direct ESP32 jumper
+NRF24L01+,MISO,21,NRF24_SPI_MISO,Radio SPI,SPI verified,Dedicated signal: direct ESP32 jumper
+MicroSD,CS,10,SD_CS,Storage SPI,Wired; card read/write pending,Dedicated signal: direct ESP32 jumper
+MicroSD,MOSI / DI,11,SD_MOSI,Storage SPI,Wired; card read/write pending,Shared breadboard signal row: GPIO11
+MicroSD,SCK / CLK,12,SD_SCLK,Storage SPI,Wired; card read/write pending,Shared breadboard signal row: GPIO12
+MicroSD,MISO / DO,13,SD_MISO,Shared with CC1101,Wired; card read/write pending,Shared breadboard signal row: GPIO13
+CC1101,CS,40,CC1101_CS,Storage SPI,SPI verified,Dedicated signal: direct ESP32 jumper
+CC1101,MOSI,11,CC1101_MOSI,Shared storage MOSI,SPI verified,Shared breadboard signal row: GPIO11
+CC1101,SCK,12,CC1101_SCK,Shared storage SCK,SPI verified,Shared breadboard signal row: GPIO12
+CC1101,MISO,13,CC1101_MISO,Shared storage MISO,SPI verified,Shared breadboard signal row: GPIO13
+CC1101,GDO0,1,CC1101_GDO0,Single asynchronous RX/TX data line,SPI verified; RF regression pending,Dedicated signal: direct ESP32 jumper
+PN532,SS / CS,2,PN532_SS,SPI mode: SW1 OFF / SW2 ON,Firmware query verified,Dedicated signal: direct ESP32 jumper
+PN532,MOSI,11,PN532_MOSI,Bit-banged; shares storage MOSI,Firmware query verified,Shared breadboard signal row: GPIO11
+PN532,SCK,12,PN532_SCK,Bit-banged; shares storage SCK,Firmware query verified,Shared breadboard signal row: GPIO12
+PN532,MISO,42,PN532_MISO,Dedicated return; not GPIO13,Firmware query verified,Dedicated signal: direct ESP32 jumper
+GPS NEO-6M,TX,41,GPS_UART_RX,9600 baud; module RX unconnected,Valid NMEA verified,Dedicated signal: direct ESP32 jumper
+IR receiver,OUT,14,IR_RX_PIN,Conflicts with unfitted NRF24 #2 CE,Electrical test pending,Dedicated signal: direct ESP32 jumper
+IR transmitter,Signal,38,IR_TX_PIN,Conflicts with unfitted NRF24 #2 CSN,Electrical test pending,Dedicated signal: direct ESP32 jumper

@@ -1,0 +1,26 @@
+# Local files and build caches
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+build/
+.env
+.env.*
+!.env.example
+# Superseded upstream binaries and web flasher assets; use firmware/ instead
+Pre-compiled Bin/
+tools/esp32/
+tools/esp32s3/
+tools/flash_download_tool_3.9.5.zip
+tools/esp32-div-flasher/bundled/
+docs/firmware/
+docs/manifest*.json
+docs/main.js
+docs/style.css
+docs/project-viewer.js
+docs/models/
+docs/vendor/
+docs/favicon.svg
+docs/start-server.bat
+.github/FUNDING.yml

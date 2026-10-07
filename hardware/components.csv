@@ -1,0 +1,19 @@
+item,component,quantity,specification,status
+1,ESP32-S3 N16R8 DevKit,1,16 MB flash; 8 MB OPI PSRAM; YD board assumed by enclosure,USB-powered build verified
+2,TPM408-2.8 TFT + XPT2046,1,2.8 inch ILI9341 display with resistive touch,Display and calibrated touch verified
+3,KY-023 joystick,1,Power potentiometers from 3V3,Verified
+4,NRF24L01+ PA/LNA + antenna,1,3V3 only; 10–47 uF local decoupling,SPI verified
+5,CC1101 E07-M1101D-SMA + antenna,1,3V3; GDO0 shared for asynchronous RX/TX,SPI verified; RF functions require testing
+6,PN532 NFC V3,1,SPI; SW1 OFF / SW2 ON for the tested module,Firmware version query verified; card tests pending
+7,Separate SPI microSD reader + card,1,FAT32/FAT16 card; VCC depends on regulator/level shifting,Wired; card read/write pending
+8,NEO-6M GY-GPS6MV2 + ceramic antenna,1,GPS TX to GPIO41; common GND; verify breakout supply rating,Valid NMEA stream verified; outdoor fix not established here
+9,KY-005 IR transmitter,1,Signal GPIO38; check module driver/current requirements,Assigned; electrical test pending
+10,KY-022 IR receiver,1,Output GPIO14; use ESP32-safe 3.3 V signal levels,Assigned; electrical test pending
+11,400-point breadboard,1,83.5 x 54.5 x 8.5 mm assumed in enclosure,Power distribution and wiring
+12,Dupont jumper wires,60 x 20 cm + 5 x 40 cm,Enclosure packing assumption; up to 2 mm insulation diameter,Check actual wiring length and connectors
+13,10–47 uF capacitor,1,Across NRF24 VCC/GND close to radio; observe polarity,Radio supply decoupling
+14,USB data cable + supply,1,Use board native USB for firmware serial,Current verified power arrangement
+15,18650 cell + holder,1,Holder pocket 78.9 x 21.9 mm; cell nominal length 65 mm,Mechanical provision; disconnected in electrical tests
+16,TP4056 USB-C charger,1,Mechanical provision; not a complete regulated battery power path,Battery circuit unverified/disconnected
+17,SS12D00 power switch,1,Mechanical provision,Battery circuit unverified/disconnected
+18,Lid / display / joystick fasteners,4 x M2.5x8; 4 x M3x6; 2 x M3x8,Countersunk lid screws; removable tape/foam for unmounted modules,Check fasteners against printed parts
